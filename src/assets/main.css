@@ -1,0 +1,71 @@
+@import './base.css';
+
+
+:root{
+  --bg:#e3f2fd;
+  --foreground:#90caf9;
+  --highlight:#0d47a1;
+  --dark:#1976d2;
+  --light:#64b5f6;
+  --mid:#2196f3;
+}
+
+body{
+  background-color: var(--bg);
+}
+
+.pageHeader{
+  background-color: var(--foreground);
+}
+
+.pageFooter{
+  background-color: var(--foreground);
+}
+
+.footerText{
+  padding-top: 3.3px;
+  padding-bottom: 3.3px;
+  padding-left: 7.5px;
+  padding-right: 7.5px;
+  background-color: var(--mid);
+  color: var(--bg);
+  border-radius: 5px;
+  
+}
+
+.headerIcon{
+  background-color: var(--dark);
+  color: var(--bg);
+  border-radius: 4px;
+}
+.heroText{
+  padding-top: 3.3px;
+  padding-bottom: 3.3px;
+  padding-left: 7.5px;
+  padding-right: 7.5px;
+  background-color: var(--dark);
+  color: var(--bg);
+  border-radius: 5px;
+}
+.inputSpan{
+  border-radius: 5px;
+  padding: 5px;
+  background-color: var(--light);
+}
+.inputTag{
+  padding: 7.5px;
+  background-color: var(--bg);
+  color: var(--highlight);
+  border-radius: 5px;
+  border-color: var(--dark);
+}
+.heroImage{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: var(--foreground);
+}
+.headerSubtext{
+  border-radius: 4px;
+  background-color: var(--mid);
+  color: var(--bg);
+}
