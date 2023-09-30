@@ -69,6 +69,9 @@ export default {
   >.recipeContainer{
     display: grid;
     justify-items: center;
+    >img{
+      width: 100%;
+    }
     
   }
 }

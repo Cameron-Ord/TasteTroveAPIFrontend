@@ -1,13 +1,10 @@
 <template>
   <span class="headerSpan">
     <nav class="headerNav">
-        <div class="logoContainer">
+      <menu-element></menu-element>  
+      <div class="logoContainer">
             <h3 class="headerIcon">Home</h3>
-        </div>
-        <div>
-            <h3 class="headerSubtext">Signup</h3>
-            <h3 class="headerSubtext">Login</h3>
-        </div>
+      </div>
     </nav>
     <div class="searchBar">
       <recipe-search @handle-response="passToMain"></recipe-search>
@@ -16,10 +13,11 @@
 </template>
 
 <script>
-import RecipeSearch from './RecipeSearch.vue'
+import MenuElement from './MenuElement.vue';
+import RecipeSearch from './RecipeSearch.vue';
 export default {
   components: {
-    RecipeSearch
+    RecipeSearch,MenuElement
   },
 
   data() {
@@ -59,7 +57,7 @@ export default {
         >div{
             display: grid;
             justify-items: center;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             >.headerSubtext{
                 padding-left: 5px;
                 padding-right: 5px;
