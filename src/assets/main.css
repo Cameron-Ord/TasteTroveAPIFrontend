@@ -24,6 +24,8 @@ padding-right: 8px;
 padding-bottom: 4px;
 padding-top: 4px;
 border-radius: 7.5px;
+line-break: normal;
+
 }
 
 .apiKeySubHeader{
@@ -34,6 +36,7 @@ padding-right: 8px;
 padding-bottom: 4px;
 padding-top: 4px;
 border-radius: 7.5px;
+line-break: normal;
 }
 .apiKeyText{
 color: var(--bg);
@@ -44,6 +47,7 @@ padding-top: 6px;
 padding-bottom: 6px;
 border-radius: 5px;
 font-weight: 700;
+line-break: normal;
 }
 .scrollerText{
   color: var(--bg);
@@ -62,6 +66,8 @@ font-weight: 700;
   row-gap: 30px;
 }
 .docInfo>.headingContainer{
+  width: auto;
+  max-width: 100%;
   display: grid;
   justify-items: start;
 }
@@ -73,25 +79,31 @@ font-weight: 700;
   padding-bottom: 4px;
   padding-top: 4px;
   border-radius: 7.5px;
+  line-break: normal;
   
 }
 .docInfo>.methodContainer{
   display: grid;
   grid-auto-flow: row;
   row-gap: 20px;
+  width: auto;
+  max-width: 100%;
   justify-items: start;
 }
 .docInfo>.methodContainer>h4{
   color: var(--bg);
   background-color: var(--dark);
   padding-left: 8px;
+  white-space-collapse: break-spaces;
   padding-right: 8px;
   padding-bottom: 4px;
   padding-top: 4px;
   border-radius: 7.5px;
-  width: 60%;
+  width: 90%;
+  line-break: normal;
 }
 .docInfo>.methodContainer>p{
+  white-space-collapse: break-spaces;
   color: var(--bg);
   background-color: var(--highlight);
   padding-left: 8px;
@@ -100,7 +112,7 @@ font-weight: 700;
   padding-bottom: 6px;
   border-radius: 5px;
   font-weight: 700;
-  
+  line-break: normal;
 }
 
 .blockSpan{

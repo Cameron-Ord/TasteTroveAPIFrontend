@@ -71,6 +71,8 @@
     grid-auto-flow: row;
     row-gap: 25px;
     >.apiContent{
+        width: auto;
+        max-width: 100%;
         display: grid;
         justify-items: start;
         text-align: start;
@@ -79,6 +81,8 @@
         row-gap: 15px;
     }
     >.howTo{
+        width: auto;
+        max-width: 100%;
         align-items: center;
         display: grid;
         justify-items: start;
@@ -87,6 +91,8 @@
         row-gap: 15px;    
     }
     >.apiURL{
+        width: auto;
+        max-width: 100%;
         align-items: center;
         display: grid;
         justify-items: start;

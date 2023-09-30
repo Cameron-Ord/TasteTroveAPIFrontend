@@ -51,9 +51,11 @@ export default {
 .inputSpan{
     display: grid;
     align-items: center;
+    justify-items: center;
+    width: 70%;
     >.inputTag{
         display: grid;
-        
+        width: 90%;
     }
 }
 </style>

@@ -77,7 +77,7 @@ import PageFooter from '../components/PageFooter.vue';
             >.DocsInfo{
                 display: grid;
                 justify-items: center;
-                
+                    
             }
             >.docsNav{
                 display: grid;
