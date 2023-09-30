@@ -10,9 +10,10 @@
                         <h4>Docs</h4>
                     </div>
                     <div class="menuText">
-                        <p class="menuTag">API keys</p>
-                        <p class="menuTag">How to use</p>
-                        <p class="menuTag">Usage policy</p>
+                        <p class="menuTag" @click="goToDocs(this.$refs.Docs)" ref="Docs">Documentation</p>
+                        <p class="menuTag" @click="goToDocs(this.$refs.Keys)" ref="Keys">API keys</p>
+                        <p class="menuTag" @click="goToDocs(this.$refs.HowTo)" ref="HowTo">How to use</p>
+                        <p class="menuTag" @click="goToDocs(this.$refs.Policy)" ref="Policy">Usage policy</p>
                     </div>
                 </div>
                 <div class="contentWrapper">
@@ -32,6 +33,7 @@
 </template>
 
 <script>
+import Cookies from 'vue-cookies';
     export default {
         components:{
 
@@ -45,6 +47,12 @@
 
         methods:{
 
+            goToDocs(ref){
+                if(ref){
+                    Cookies.set('docSelection', ref.textContent);
+                    this.$router.push('/Docs');
+                }
+            },
 
             showMenu(ref){
 
@@ -100,7 +108,7 @@
         cursor: pointer;
     }
     >.menuBox{
-        width: 125px;
+        width: 150px;
         position: absolute;
         left: 0;
         top: calc(100% + 0.75rem);

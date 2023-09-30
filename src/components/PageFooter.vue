@@ -4,8 +4,8 @@
       <p class="footerText">placeholder</p>
     </nav>
     <div class="credsFooter">
-      <h3 class="footerText">2023 - Cameron Ord</h3>
-      <h3 class="footerText">TasteTroveAPI</h3>
+      <h4 class="footerText">2023 - Cameron Ord</h4>
+      <h4 class="footerText">TasteTroveAPI</h4>
     </div>
   </span>
 </template>
@@ -40,17 +40,22 @@ export default {
     display: grid;
     grid-auto-flow: row;
     row-gap: 25px;
-    justify-items: center;
+    justify-items: start;
+    text-align: start;
+    margin-left: 25px;
     
   }
   >.footerNav{
     display: grid;
-    justify-items: center;
-    
-    >h3{
+    justify-items: start;
+    text-align: start;
+    margin-left: 25px;
+    >h4{
+      
       font-size: clamp(0.9em, 1.5vw, 1.25em);
     }
-    >h3{
+    >h4{
+      
       font-size: clamp(0.9em, 1.5vw, 1.25em);
     }
   }

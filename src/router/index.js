@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import PageMain from '../views/PageMain.vue'
+import DocsPage from '../views/DocsPage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -8,6 +9,11 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: PageMain
+    },
+    {
+      path: '/Docs',
+      name: 'Documentation',
+      component: DocsPage
     }
   ]
 })

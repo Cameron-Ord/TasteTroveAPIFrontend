@@ -48,7 +48,7 @@ export default {
     >.heroParaText{
       padding-right: 15px;
       padding-left: 15px;
-      background-color: var(--foreground);
+      background-color: var(--bg);
       border-radius: 7.5px;
       color: var(--highlight);
       font-weight: 600;

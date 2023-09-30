@@ -1,5 +1,4 @@
 <template>
-    <div class="pageWrapper">
         <header class="pageHeader">
             <page-header @handle-response="sendToPreview"></page-header>
         </header>
@@ -21,7 +20,6 @@
         <footer class="pageFooter">
             <page-footer></page-footer>
         </footer>
-    </div>
 </template>
 
 <script>
@@ -39,6 +37,9 @@ import PageHeader from '../components/PageHeader.vue';
         },
 
         methods:{
+            sendToPreview(){
+
+            }
         },
 
         data() {
@@ -50,12 +51,7 @@ import PageHeader from '../components/PageHeader.vue';
 </script>
 
 <style lang="scss" scoped>
-.pageWrapper{
-
-    display: grid;
-    align-items: center;
-
-    >.pageMain{
+    .pageMain{
         display: grid;
         align-items: center;
         min-height: 100vh;
@@ -86,15 +82,15 @@ import PageHeader from '../components/PageHeader.vue';
             }
         }
     }
-    >.pageHeader{
+    .pageHeader{
     display: grid;
     align-items: center;
     min-height: 150px;
     }
-    >.pageFooter{
+    .pageFooter{
         display: grid;
         align-items: center;
         min-height: 175px;
     }
-}
+
 </style>
