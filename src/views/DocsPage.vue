@@ -20,13 +20,7 @@
                 <docs-id></docs-id>
             </article>
             <article class="DocsInfo">
-                <docs-random></docs-random>
-            </article>
-            <article class="DocsInfo">
                 <docs-nutrition></docs-nutrition>
-            </article>
-            <article class="DocsInfo">
-                <docs-ishealthy></docs-ishealthy>
             </article>
             <article class="DocsInfo">
                 <get-instructions></get-instructions>
@@ -40,9 +34,7 @@
 
 <script>
 import GetInstructions from '../components/GetInstructions.vue';
-import DocsIshealthy from '../components/DocsIshealthy.vue';
 import DocsNutrition from '../components/DocsNutrition.vue';
-import DocsRandom from '../components/DocsRandom.vue';
 import DocsId from '../components/DocsId.vue';
 import DocsName from '../components/DocsName.vue';
 import DocsGetcuisine from '../components/DocsGetcuisine.vue';
@@ -54,10 +46,10 @@ import PageFooter from '../components/PageFooter.vue';
     export default {
 
         components:{
-            DocsIshealthy,
+            
             GetInstructions,
             DocsNutrition,
-            DocsRandom,
+            
             DocsId,
             DocsGetcuisine,
             DocsApikey,
@@ -75,10 +67,14 @@ import PageFooter from '../components/PageFooter.vue';
         display: grid;
         min-height: 100vh;
         align-items: center;
+        margin-top: 25px;
+        margin-bottom: 25px;
         >.docsBody{
             display: grid;
             align-items: center;
-            >.docsContent{
+            grid-auto-flow: row;
+            row-gap: 50px;
+            >.DocsInfo{
                 display: grid;
                 justify-items: center;
                 

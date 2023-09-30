@@ -1,8 +1,14 @@
 
 <template>
-    <div>
-
-    </div>
+    <span class="docInfo">
+        <div class="headingContainer">
+            <h2>GET RECIPE ID</h2>
+        </div>
+        <div class="methodContainer">
+            <p>Retrieves the id associated with a recipe</p>
+            <p>Send the name as a required arguement in params. It must be an exact match. It is not case sensitive.</p>
+        </div>
+    </span>
 </template>
 
 <script>

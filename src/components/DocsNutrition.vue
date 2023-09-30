@@ -1,8 +1,15 @@
 
 <template>
-    <div>
-
-    </div>
+    <span class="docInfo">
+        <div class="headingContainer">
+            <h2>GET NUTRITION</h2>
+        </div>
+        <div class="methodContainer">
+            <p>Gets the nutritional data associated with a recipe.</p>
+            <p>This request takes the recipe ID as a required arugment, so include the ID within sent the params.</p>
+            <p>The easiest way to use this method is to use the get id by name request in conjunction with this request.</p>
+        </div>
+    </span>
 </template>
 
 <script>

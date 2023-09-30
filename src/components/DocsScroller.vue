@@ -2,14 +2,14 @@
 <template>
     <span class="DocsSpan">
         <div class="textContainer">
-            <p>API keys</p>
-            <p>GET by Cuisine</p>
-            <p>GET by Name</p>
-            <p>GET by ID</p>
-            <p>GET Random</p>
-            <p>GET by Nutrition</p>
-            <p>GET by isHealthy</p>
-            <p>GET Instructions</p>
+            <p @click="goToSelection(this.$refs.keys)" ref="keys" class="scrollerText">API keys</p>
+            <p @click="goToSelection(this.$refs.cuisine)" ref="cuisine" class="scrollerText">GET by Cuisine</p>
+            <p @click="goToSelection(this.$refs.name)" ref="name" class="scrollerText">GET by Name</p>
+            <p @click="goToSelection(this.$refs.id)" ref="id" class="scrollerText">GET recipe ID</p>
+            <p @click="goToSelection(this.$refs.nutrition)" ref="nutrition" class="scrollerText">GET by Nutrition</p>
+            <p @click="goToSelection(this.$refs.healthy)" ref="healthy" class="scrollerText">GET by isHealthy</p>
+            <p @click="goToSelection(this.$refs.instructions)" ref="instructions" class="scrollerText">GET Instructions</p>
+            <p @click="goToSelection(this.$refs.nutrition)" ref="nutrition" class="scrollerText">GET Nutrition</p>
         </div>
     </span>
 </template>
@@ -27,7 +27,9 @@
         },
 
         methods:{
-
+            goToSelection(ref){
+                console.log(ref)
+            }
         },
         computed:{
 
@@ -66,6 +68,8 @@
         display: grid;
         justify-items: center;
         grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+        grid-auto-flow: row;
+        row-gap: 15px;
     }
 }
 </style>
