@@ -12,7 +12,9 @@
             </section>
             <section class="featuresSection">
                 <article class="featuresArticle">
+                    <recipes-block></recipes-block>
                     <ingredients-block></ingredients-block>
+                    <nutrition-block></nutrition-block>
                 </article>
             </section>
         </main>
@@ -23,8 +25,9 @@
 </template>
 
 <script>
+import NutritionBlock from '../components/NutritionBlock.vue';
 import IngredientsBlock from '../components/IngredientsBlock.vue';
-
+import RecipesBlock from '../components/RecipesBlock.vue';
 import HeroText from '../components/HeroText.vue';
 import HeroImage from '../components/HeroImage.vue';
 import PageFooter from '../components/PageFooter.vue';
@@ -32,7 +35,7 @@ import PageHeader from '../components/PageHeader.vue';
     export default {
 
         components:{
-            IngredientsBlock,HeroText,HeroImage,PageFooter,PageHeader
+            NutritionBlock,RecipesBlock,IngredientsBlock,HeroText,HeroImage,PageFooter,PageHeader
         },
 
         methods:{
@@ -67,6 +70,8 @@ import PageHeader from '../components/PageHeader.vue';
             >.featuresArticle{
                 display: grid;
                 justify-items: center;
+                grid-auto-flow: row;
+                row-gap: 25px;
             }
         }
 

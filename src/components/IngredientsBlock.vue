@@ -5,7 +5,7 @@
             <h3>Ingredients</h3>
         </div>
         <div class="image">
-            <img src="/svgs/cooking.svg" alt="">
+            <img src="/svgs/ingr.svg" alt="">
         </div>
         <div class="text">
             <p>With TasteTroveAPI, each recipe comes with an ingredients list.</p>
