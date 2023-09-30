@@ -10,14 +10,9 @@
                     <hero-image></hero-image>
                 </article>
             </section>
-            <section class="recipePreview" ref="recipePreviewSection">
-                <article class="recipeArticle">
-                    <recipe-preview ref="recipePreview"></recipe-preview>
-                </article>
-            </section>
-            <section class="aboutSection">
-                <article class="aboutArticle">
-
+            <section class="featuresSection">
+                <article class="featuresArticle">
+                    <ingredients-block></ingredients-block>
                 </article>
             </section>
         </main>
@@ -28,8 +23,8 @@
 </template>
 
 <script>
+import IngredientsBlock from '../components/IngredientsBlock.vue';
 
-import RecipePreview from '../components/RecipePreview.vue';
 import HeroText from '../components/HeroText.vue';
 import HeroImage from '../components/HeroImage.vue';
 import PageFooter from '../components/PageFooter.vue';
@@ -37,15 +32,10 @@ import PageHeader from '../components/PageHeader.vue';
     export default {
 
         components:{
-            RecipePreview,HeroText,HeroImage,PageFooter,PageHeader
+            IngredientsBlock,HeroText,HeroImage,PageFooter,PageHeader
         },
 
         methods:{
-            sendToPreview(response){
-                let recipeElement = this.$refs.recipePreviewSection;
-                recipeElement.style.display="grid";
-                this.$refs.recipePreview.handleData(response);
-            }
         },
 
         data() {
@@ -66,6 +56,19 @@ import PageHeader from '../components/PageHeader.vue';
         display: grid;
         align-items: center;
         min-height: 100vh;
+        grid-auto-flow: row;
+        row-gap: 25px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+
+        >.featuresSection{
+            display: grid;
+            align-items: center;
+            >.featuresArticle{
+                display: grid;
+                justify-items: center;
+            }
+        }
 
         >.heroSection{
             display: grid;
@@ -73,14 +76,8 @@ import PageHeader from '../components/PageHeader.vue';
 
             >.heroArticle{
                 display: grid;
-            }
-        }
-        >.recipePreview{
-            display: none;
-            align-items: center;
-            >.recipeArticle{
-                display: grid;
-
+                grid-auto-flow: row;
+                row-gap: 25px;
             }
         }
     }

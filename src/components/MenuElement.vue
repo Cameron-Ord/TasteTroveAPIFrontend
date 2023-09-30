@@ -56,9 +56,7 @@
                 if(isDropdownButton) {
                     currentDropdown = ref.closest('[dropdown]');
                     currentDropdown.classList.toggle('isActive');
-                    this.assignstyle();
                 }
-
                 document.querySelectorAll('[dropdown].isActive').forEach(dropdown => {
                     if(dropdown === currentDropdown) return
                     dropdown.classList.remove('isActive')
@@ -133,6 +131,8 @@
                         padding-left: 8.5px;
                         padding-right: 8.5px;
                         cursor: pointer;
+                        color: var(--highlight);
+                        font-weight: 500;
                     }
                 }
                 >.menuSubHeader{
