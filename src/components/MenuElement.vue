@@ -21,8 +21,8 @@
                         <h4>Account</h4>
                     </div>
                     <div class="menuText">
-                        <p class="menuTag">Login</p>
-                        <p class="menuTag">Signup</p>
+                        <p class="menuTag" @click="goToLogin">Login</p>
+                        <p class="menuTag" @click="goToSignup">Signup</p>
                         <p class="menuTag">About</p>
                     </div>
                 </div>
@@ -46,6 +46,20 @@ import Cookies from 'vue-cookies';
         },
 
         methods:{
+
+            goToLogin(){
+               this.$router.push('/Login'); 
+                Cookies.set('clientLogin');
+               this.$refs.menuBox.classList.remove('isActive');
+            },
+
+            goToSignup(){
+                this.$router.push('/Login'); 
+                this.$refs.menuBox.classList.remove('isActive');
+                Cookies.set('SigningUp');
+
+
+            },
 
             goToDocs(ref){
                 if(ref){
