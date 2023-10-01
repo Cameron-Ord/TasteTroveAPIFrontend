@@ -38,8 +38,17 @@ export default {
       const box = document.querySelector('[SignupBox].openBox');
       if(box === OpenedBox) return
       OpenedBox.classList.remove('openBox')
-      },
-      
+    },
+    
+    CookieExists(Cookie){
+      return document.cookie.split(';').some((cookie) => cookie.trim().startsWith(Cookie + '='))
+
+    },
+
+    submitSignup(){
+
+    },
+
     submitLogin(username, password){
       if(username && password){
         axios({
@@ -63,8 +72,14 @@ export default {
     }
   },
   computed: {},
-  created() {},
-  mounted() {},
+  created() {
+  },
+  mounted() {
+    if(this.CookieExists('SigningUp')){
+      this.openSignupBox(this.$refs.signup);
+      Cookies.remove('SigningUp');
+      }
+  },
   beforeMount() {},
   beforeUpdate() {},
   updated() {},
