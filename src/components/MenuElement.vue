@@ -71,8 +71,7 @@ import Cookies from 'vue-cookies';
 
             showMenu(ref){
 
-                const isDropdownButton = this.$refs.icon.matches('[dropDownButton]')
-                console.log(isDropdownButton)
+                const isDropdownButton = this.$refs.icon.matches('[dropDownButton]');
                 if(!isDropdownButton && ref.closest('[dropdown]') != null) return
 
                 let currentDropdown;

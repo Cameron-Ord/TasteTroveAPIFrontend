@@ -7,11 +7,11 @@
         <input placeholder="..." type="password" ref="password" class="clientInput">
     </div>
     <div class="optionsContainer">
-      <p class="signuptext" ref="signup" @click="openSignupBox">Signup</p>
+      <p class="signuptext" ref="signup" @click="openSignupBox(this.$refs.signup)">Signup</p>
       <p class="logintext" ref="login" @click="submitLogin(this.$refs.username, this.$refs.password)">Login</p>
     </div>
-    <div class="signupbox">
-      
+    <div class="signupbox" ref="signup" SignupBox>
+          <h2>this is open</h2>
     </div>
   </span>
 </template>
@@ -28,9 +28,18 @@ export default {
   },
 
   methods: {
-    openSignupBox(){
-      console.log('this function does nothing!!!');
-    },
+    openSignupBox(ref){
+      const isopenBox = ref.matches('[SignupBox]');
+      let OpenedBox;
+      if(isopenBox){
+        OpenedBox = ref;
+        OpenedBox.classList.toggle('openBox');
+      }
+      const box = document.querySelector('[SignupBox].openBox');
+      if(box === OpenedBox) return
+      OpenedBox.classList.remove('openBox')
+      },
+      
     submitLogin(username, password){
       if(username && password){
         axios({
@@ -64,4 +73,19 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+
+.signupbox.openBox{
+  pointer-events: auto;
+  opacity: 1;
+}
+.signupbox{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease-in-out;
+}
+</style>
