@@ -1,48 +1,49 @@
 <template>
-  <span class="clientLogin">
-    <div class="usernameInputContainer">
-        <input placeholder="username" type="text" ref="username" class="clientInput">
-    </div>
-    <div class="passwordInputContainer">
-        <input placeholder="..." type="password" ref="password" class="clientInput">
-    </div>
-    <div class="optionsContainer">
-      <p class="signuptext" ref="signup" @click="openSignupBox(this.$refs.signup)">Signup</p>
-      <p class="logintext" ref="login" @click="submitLogin(this.$refs.username, this.$refs.password)">Login</p>
-    </div>
-    <div class="signupbox" ref="signup" SignupBox>
-          <h2>this is open</h2>
-    </div>
-  </span>
+  <article class="loginArticle">
+    <span class="clientLogin" ref="login">
+      <usr-login @signup-call="SignupBox(this.$refs.signup)"  @login-call="handleLogin"></usr-login>
+    </span>
+    <span class="signupbox" ref="signup" SignupBox>
+      <client-signup @closeBox="SignupBox(this.$refs.signup)"></client-signup>
+    </span>
+  </article>
 </template>
 
 <script>
+import UsrLogin from './UsrLogin.vue';
+import ClientSignup from './ClientSignup.vue';
 import Cookies from 'vue-cookies';
 import axios from 'axios';
 
 export default {
-  components: {},
+  components: {
+    ClientSignup,UsrLogin
+  },
 
   data() {
     return {}
   },
 
   methods: {
-    openSignupBox(ref){
+    handleLogin(username,password){
+      this.submitLogin(username,password)
+    },
+    SignupBox(ref){
       const isopenBox = ref.matches('[SignupBox]');
       let OpenedBox;
       if(isopenBox){
         OpenedBox = ref;
         OpenedBox.classList.toggle('openBox');
+        this.$refs.login.classList.toggle('boxIsOpen')
       }
       const box = document.querySelector('[SignupBox].openBox');
       if(box === OpenedBox) return
       OpenedBox.classList.remove('openBox')
+      this.$refs.login.classList.remove('boxIsOpen')
     },
-    
+
     CookieExists(Cookie){
       return document.cookie.split(';').some((cookie) => cookie.trim().startsWith(Cookie + '='))
-
     },
 
     submitSignup(){
@@ -90,6 +91,25 @@ export default {
 
 <style lang="scss" scoped>
 
+.loginArticle{
+  display: grid;
+  align-items: center;
+
+>.clientLogin.boxIsOpen{
+  opacity: 0;
+  pointer-events: none;
+}
+>.clientLogin{
+  pointer-events: auto;
+  transition: 0.3s ease-in-out;
+  opacity: 1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+}
 .signupbox.openBox{
   pointer-events: auto;
   opacity: 1;

@@ -1,11 +1,21 @@
 <template>
-    <span>
-        <login-component v-if="adminSession === false && clientSession === true"></login-component>
-        <admin-login v-if="adminSession === true && clientSession === false"></admin-login>
-    </span>
+    <header class="pageHeader">
+        <page-header></page-header>
+    </header>
+    <main class="pageMain">
+        <section class="sectionLogin">
+            <login-component v-if="adminSession === false && clientSession === true"></login-component>
+            <admin-login v-if="adminSession === true && clientSession === false"></admin-login>
+        </section>
+    </main>
+    <footer class="pageFooter">
+        <page-footer></page-footer>
+    </footer>
 </template>
 
 <script>
+import PageHeader from '../components/PageHeader.vue';
+import PageFooter from '../components/PageFooter.vue';
 import AdminLogin from '../components/AdminLogin.vue';
 import LoginComponent from '../components/LoginComponent.vue';
     export default {
@@ -23,7 +33,7 @@ import LoginComponent from '../components/LoginComponent.vue';
         },
 
         components:{
-            AdminLogin, LoginComponent
+            PageHeader,PageFooter,AdminLogin, LoginComponent
         },
     
         created(){
@@ -41,4 +51,24 @@ import LoginComponent from '../components/LoginComponent.vue';
 
 <style lang="scss" scoped>
 
+.pageHeader{
+display: grid;
+align-items: center;
+min-height: 150px;
+}
+.pageFooter{
+display: grid;
+align-items: center;
+min-height: 175px;
+}
+.pageMain{
+    display: grid;
+    min-height: 100vh;
+    align-items: center;
+
+    >.sectionLogin{
+        display: grid;
+        align-items: center;
+    }
+}
 </style>

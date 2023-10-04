@@ -46,10 +46,8 @@ import PageFooter from '../components/PageFooter.vue';
     export default {
 
         components:{
-            
             GetInstructions,
             DocsNutrition,
-            
             DocsId,
             DocsGetcuisine,
             DocsApikey,
@@ -62,7 +60,7 @@ import PageFooter from '../components/PageFooter.vue';
 </script>
 
 <style lang="scss" scoped>
-    
+
     .pageMain{
         display: grid;
         min-height: 100vh;
@@ -77,7 +75,7 @@ import PageFooter from '../components/PageFooter.vue';
             >.DocsInfo{
                 display: grid;
                 justify-items: center;
-                    
+
             }
             >.docsNav{
                 display: grid;
