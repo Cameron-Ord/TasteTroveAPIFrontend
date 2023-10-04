@@ -77,7 +77,7 @@
   }
   >.optionsContainer{
     display: grid;
-    width: 70%;
+    width: 90%;
     grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
     justify-items: center;
     >.logintext{

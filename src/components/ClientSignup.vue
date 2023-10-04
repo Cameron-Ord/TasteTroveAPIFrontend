@@ -10,10 +10,8 @@
         <div class="passInput">
             <input class="signupTag" type="password" ref="passRef" placeholder="...">
         </div>
-        <div class="signupButton">
-            <p class="signupButton" ref="signupButton" @click="signUsr(this.$refs.emailRef, this.$refs.usrRef, this.$refs.passRef)">Signup</p>
-        </div>
-        <div class="closeButton">
+        <div class="optionsContainer">
+            <p class="signupButtonTag" ref="signupButton" @click="signUsr(this.$refs.emailRef, this.$refs.usrRef, this.$refs.passRef)">Signup</p>
             <p class="closeTag" @click="closeDialog">Close</p>
         </div>
     </span>
@@ -100,7 +98,36 @@ import Cookies from 'vue-cookies';
 </script>
 
 <style lang="scss" scoped>
+.signupSpan{
+    display: grid;
+    align-items:center;
+    justify-items: center;
 
+    >.optionsContainer{
+        display: grid;
+        justify-items: center;
+        grid-template-columns: repeat(auto-fit);
+        >.closeTag{
+
+        }
+        >.signupButtonTag{
+
+        }
+    }
+
+    >.passInput{
+        display: grid;
+        justify-items: center;
+    }
+    >.userInput{
+        display: grid;
+        justify-items: center;
+    }
+    >.emailInput{
+        display: grid;
+        justify-items: center;
+    }
+}
 </style>
 
 

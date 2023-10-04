@@ -77,7 +77,7 @@ export default {
   },
   mounted() {
     if(this.CookieExists('SigningUp')){
-      this.openSignupBox(this.$refs.signup);
+      this.SignupBox(this.$refs.signup);
       Cookies.remove('SigningUp');
       }
   },
@@ -100,6 +100,8 @@ export default {
   pointer-events: none;
 }
 >.clientLogin{
+  z-index: 900;
+  width: 90%;
   pointer-events: auto;
   transition: 0.3s ease-in-out;
   opacity: 1;
@@ -107,14 +109,14 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
 }
-}
-.signupbox.openBox{
+>.signupbox.openBox{
   pointer-events: auto;
   opacity: 1;
 }
-.signupbox{
+>.signupbox{
+  width: 90%;
+  z-index: 900;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -122,5 +124,6 @@ export default {
   opacity: 0;
   pointer-events: none;
   transition: 0.3s ease-in-out;
+}
 }
 </style>

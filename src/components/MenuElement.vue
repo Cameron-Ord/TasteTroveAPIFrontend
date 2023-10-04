@@ -116,6 +116,7 @@ import Cookies from 'vue-cookies';
 <style lang="scss" scoped>
 .dropDown{
     position: relative;
+    z-index: 1000;
 
     >.icon{
         color: var(--dark);
