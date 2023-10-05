@@ -14,7 +14,8 @@
         </div>
         <div class="apiURL">
             <h4 class="apiKeySubHeader">Using the API</h4>
-            <p class="apiKeyText">All request must use the base url : https://tastetroveapi.cameron-ord.online/api/{CHOSEN ENDPOINT}</p>
+            <p class="apiKeyText">All request must use the base url :</p>
+            <p class="apiURLtextTag">https://tastetroveapi.cameron-ord.online/api/{CHOSEN ENDPOINT}</p>
         </div>
     </span>
 </template>
@@ -63,6 +64,10 @@
 </script>
 
 <style lang="scss" scoped>
+
+.apiURLtextTag{
+    word-break: break-all;
+}
 .apiKeySpan{
     display: grid;
     align-items: center;
