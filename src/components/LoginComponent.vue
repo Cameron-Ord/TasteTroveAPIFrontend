@@ -2,6 +2,7 @@
   <article class="loginArticle">
     <span class="clientLogin" ref="login">
       <usr-login @signup-call="SignupBox(this.$refs.signup)"  @login-call="handleLogin"></usr-login>
+      <login-image></login-image>
     </span>
     <span class="signupbox" ref="signup" SignupBox>
       <client-signup @closeBox="SignupBox(this.$refs.signup)"></client-signup>
@@ -10,6 +11,7 @@
 </template>
 
 <script>
+import LoginImage from './LoginImage.vue';
 import UsrLogin from './UsrLogin.vue';
 import ClientSignup from './ClientSignup.vue';
 import Cookies from 'vue-cookies';
@@ -17,7 +19,7 @@ import axios from 'axios';
 
 export default {
   components: {
-    ClientSignup,UsrLogin
+    ClientSignup,UsrLogin,LoginImage
   },
 
   data() {
@@ -94,7 +96,7 @@ export default {
 .loginArticle{
   display: grid;
   align-items: center;
-
+  justify-items: center;
 >.clientLogin.boxIsOpen{
   opacity: 0;
   pointer-events: none;
@@ -102,13 +104,12 @@ export default {
 >.clientLogin{
   z-index: 900;
   width: 90%;
+  display: grid;
+  grid-auto-flow: row;
+  row-gap: 25px;
   pointer-events: auto;
   transition: 0.3s ease-in-out;
   opacity: 1;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 >.signupbox.openBox{
   pointer-events: auto;
@@ -124,6 +125,10 @@ export default {
   opacity: 0;
   pointer-events: none;
   transition: 0.3s ease-in-out;
+  background-color: var(--foreground);
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-radius: 5px;
 }
 }
 </style>
