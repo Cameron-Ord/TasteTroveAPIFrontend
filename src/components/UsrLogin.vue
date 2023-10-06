@@ -41,7 +41,6 @@ import axios from 'axios';
               }).then((response)=>{
                 Cookies.set('clientSession', response['data']);
                 this.$router.push('ProfilePage');
-                Cookies.remove('clientLogin');
                 response;
               }).catch((error)=>{
                 error;
