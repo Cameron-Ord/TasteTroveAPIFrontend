@@ -47,6 +47,7 @@ import Cookies from 'vue-cookies';
                     }
                 }).then((response)=>{
                     Cookies.set('clientInfo', response['data'])
+                    this.$router.push('/ProfilePage');
                 }).catch((error)=>{
                     error;
                 })

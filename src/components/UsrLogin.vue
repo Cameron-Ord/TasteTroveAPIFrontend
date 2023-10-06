@@ -9,12 +9,14 @@
     </div>
     <div class="optionsContainer">
       <p class="signuptext" ref="signup" @click="SignupBoxCall">Signup</p>
-      <p class="logintext" ref="login" @click="LoginSubmitCall(this.$refs.username, this.$refs.password)">Login</p>
+      <p class="logintext" ref="login" @click="submitLogin(this.$refs.username, this.$refs.password)">Login</p>
     </div>
     </div>
 </template>
 
 <script>
+import Cookies from 'vue-cookies';
+import axios from 'axios';
     export default {
         components:{
 
@@ -27,9 +29,29 @@
         },
 
         methods:{
-            LoginSubmitCall(username,password){
-                this.$emit('login-call', username,password);
-            },
+          submitLogin(username, password){
+            if(username && password){
+              axios({
+                url: 'https://tastetroveapi.cameron-ord.online/api/clientLogin',
+                method: 'POST',
+                data:{
+                  username: username.value,
+                  password: password.value,
+                }
+              }).then((response)=>{
+                Cookies.set('clientSession', response['data']);
+                this.$router.push('ProfilePage');
+                Cookies.remove('clientLogin');
+                response;
+              }).catch((error)=>{
+                error;
+                this.status = "Invalid Login"
+              });
+            } else {
+              this.status = "Please provide the required information";
+            }
+          },
+        
             SignupBoxCall(){
                 this.$emit('signup-call');
             }

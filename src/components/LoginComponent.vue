@@ -1,7 +1,7 @@
 <template>
   <article class="loginArticle">
     <span class="clientLogin" ref="login">
-      <usr-login @signup-call="SignupBox(this.$refs.signup)"  @login-call="handleLogin"></usr-login>
+      <usr-login @signup-call="SignupBox(this.$refs.signup)"></usr-login>
       <login-image></login-image>
     </span>
     <span class="signupbox" ref="signup" SignupBox>
@@ -15,7 +15,6 @@ import LoginImage from './LoginImage.vue';
 import UsrLogin from './UsrLogin.vue';
 import ClientSignup from './ClientSignup.vue';
 import Cookies from 'vue-cookies';
-import axios from 'axios';
 
 export default {
   components: {
@@ -47,33 +46,7 @@ export default {
     CookieExists(Cookie){
       return document.cookie.split(';').some((cookie) => cookie.trim().startsWith(Cookie + '='))
     },
-
-    submitSignup(){
-
-    },
-
-    submitLogin(username, password){
-      if(username && password){
-        axios({
-          url: 'https://tastetroveapi.cameron-ord.online/api/clientLogin',
-          method: 'POST',
-          data:{
-            username: username.value,
-            password: password.value,
-          }
-        }).then((response)=>{
-          Cookies.set('clientSession', response['data']);
-          Cookies.remove('clientLogin');
-          response;
-        }).catch((error)=>{
-          error;
-          this.status = "Invalid Login"
-        });
-      } else {
-        this.status = "Please provide the required information";
-      }
-    }
-  },
+},
   computed: {},
   created() {
   },

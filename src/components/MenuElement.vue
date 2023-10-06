@@ -10,10 +10,8 @@
                         <h4>Docs</h4>
                     </div>
                     <div class="menuText">
+                        <p class="menuTag" @click="goToDocs(this.$refs.Policy)" ref="Policy">Usage Policy</p>
                         <p class="menuTag" @click="goToDocs(this.$refs.Docs)" ref="Docs">Documentation</p>
-                        <p class="menuTag" @click="goToDocs(this.$refs.Keys)" ref="Keys">API keys</p>
-                        <p class="menuTag" @click="goToDocs(this.$refs.HowTo)" ref="HowTo">How to use</p>
-                        <p class="menuTag" @click="goToDocs(this.$refs.Policy)" ref="Policy">Usage policy</p>
                     </div>
                 </div>
                 <div class="contentWrapper">
@@ -21,9 +19,10 @@
                         <h4>Account</h4>
                     </div>
                     <div class="menuText">
-                        <p class="menuTag" @click="goToLogin">Login</p>
-                        <p class="menuTag" @click="goToSignup">Signup</p>
-                        <p class="menuTag">About</p>
+                        <p class="menuTag" @click="goToProfile" v-if="clientSession === true">Profile</p>
+                        <p class="menuTag" @click="goToLogin" v-if="clientSession === false">Login</p>
+                        <p class="menuTag" @click="goToSignup" v-if="clientSession === false">Signup</p>
+                        <p class="menuTag" @click="SignOut" v-if="clientSession === true">Signout</p>
                     </div>
                 </div>
             </div>
@@ -41,11 +40,31 @@ import Cookies from 'vue-cookies';
 
         data() {
             return {
-
+                clientSession : false
             }
         },
 
         methods:{
+            SignOut(){
+                this.$refs.menuBox.classList.remove('isActive');
+                Cookies.remove('clientSession');
+                if(this.$route.path === '/ProfilePage'){
+                    this.$router.push('/');
+                } else {
+                    this.$router.go();
+                }
+            },
+            goToProfile(){
+                const getLoginStatus = Cookies.get('clientSession');
+                if(getLoginStatus !== null){
+                    this.$refs.menuBox.classList.remove('isActive');
+                    this.clientSession = true;
+                    this.$router.push('/ProfilePage');
+                } else {
+                    this.$refs.menuBox.classList.remove('isActive');
+                    this.clientSession = false;
+                }
+            },
 
             goToLogin(){
                this.$router.push('/Login'); 
@@ -57,14 +76,12 @@ import Cookies from 'vue-cookies';
                 this.$router.push('/Login'); 
                 this.$refs.menuBox.classList.remove('isActive');
                 Cookies.set('SigningUp');
-
-
             },
 
             goToDocs(ref){
                 if(ref){
                     this.$refs.menuBox.classList.remove('isActive');
-                    Cookies.set('docSelection', ref.textContent);
+                    Cookies.set('docChoice', ref.textContent)
                     this.$router.push('/Docs');
                 }
             },
@@ -83,13 +100,34 @@ import Cookies from 'vue-cookies';
                     if(dropdown === currentDropdown) return
                     dropdown.classList.remove('isActive')
                 })
-            }
+            },
+
+            checkIfNull(cookie){
+                if(cookie !== null){
+                    return false;
+                } else {
+                    return true;
+                }
+            },
+
+            CookieExists(Cookie){
+                return document.cookie.split(';').some((cookie) => cookie.trim().startsWith(Cookie + '='))
+            },
+
         },
         computed:{
 
         },
         created(){
-
+            if(this.CookieExists('clientSession')){
+                const checker = Cookies.get('clientSession');
+                 const clientBool = this.checkIfNull(checker);
+                 if(clientBool === false){
+                    this.clientSession = true;
+                 } else {
+                    this.$router.push('/');
+                 }
+            }
         },
         mounted(){
 
@@ -142,7 +180,7 @@ import Cookies from 'vue-cookies';
 
             >.contentWrapper{
                 display: grid;
-                    
+                align-items: center;
                 >.menuText{
                     display: grid;
                     align-items: center;

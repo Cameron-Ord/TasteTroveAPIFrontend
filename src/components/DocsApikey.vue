@@ -66,7 +66,14 @@
 <style lang="scss" scoped>
 
 .apiURLtextTag{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+    background-color: var(--highlight);
     word-break: break-all;
+    color: var(--bg);
+    border-radius: 5px;
 }
 .apiKeySpan{
     display: grid;
