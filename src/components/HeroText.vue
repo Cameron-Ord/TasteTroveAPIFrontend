@@ -5,8 +5,8 @@
     </div>
     <div class="heroPara">
       <p class="heroParaText">TasteTrove is an API that delivers a wide range of recipes spanning many cuisines.
-      Every recipe is hand picked and added to the API. Every recipe in the TasteTrove API contains 
-      a list of ingredients, it's cooking methods, whether it's healthy or not, the recipe's it name and description.
+      Every recipe is hand picked and added to the API. Each recipe in the TasteTrove API contains 
+      a list of ingredients, it's cooking methods, whether it's healthy or not, all along with the recipes name and description.
       </p>
     </div>
   
