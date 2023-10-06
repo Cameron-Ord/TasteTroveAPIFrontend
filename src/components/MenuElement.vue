@@ -73,9 +73,13 @@ import Cookies from 'vue-cookies';
             },
 
             goToSignup(){
-                this.$router.push('/Login'); 
-                this.$refs.menuBox.classList.remove('isActive');
-                Cookies.set('SigningUp');
+                if(this.$route.path !== '/Login'){
+                    this.$router.push('/Login'); 
+                    this.$refs.menuBox.classList.remove('isActive');
+                    Cookies.set('SigningUp');
+                } else {
+                    this.$refs.menuBox.classList.remove('isActive');
+                }
             },
 
             goToDocs(ref){
