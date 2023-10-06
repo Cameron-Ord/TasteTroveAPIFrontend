@@ -3,7 +3,7 @@
     <nav class="headerNav">
       <menu-element></menu-element>  
       <div class="logoContainer">
-            <h3 class="headerIcon">Home</h3>
+            <h3 class="headerIcon" @click="goToHome">Home</h3>
       </div>
     </nav>
     <div class="searchBar">
@@ -25,6 +25,13 @@ export default {
   },
 
   methods: {
+    goToHome(){
+      if(this.$route.path === '/'){
+        this.$router.go();
+      } else {
+        this.$router.push('/');
+      }
+    },
     passToMain(response) {
       this.$emit('handle-response', response)
     }
@@ -75,7 +82,8 @@ export default {
                 padding-right: 5px;
                 padding-top: 2.5px;
                 padding-bottom: 2.5px;
-            }
+                cursor: pointer;
+              }
         }
     }
 }
