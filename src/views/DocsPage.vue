@@ -4,9 +4,6 @@
     </header>
     <main class="pageMain">
         <section class="docsBody">
-            <article class="docsNav">
-                <docs-scroller @showChoice="handleChoice"></docs-scroller>
-            </article>
             <article class="DocsInfo" v-if="gotoChoice === 'API_keys'">
                 <docs-apikey></docs-apikey>
             </article>
@@ -24,6 +21,11 @@
             </article>
             <article class="DocsInfo" v-if="gotoChoice === 'GET_Instructions'">
                 <get-instructions></get-instructions>
+            </article>
+        </section>
+        <section class="docsNavigation">
+            <article class="docsNav">
+                <docs-scroller @showChoice="handleChoice"></docs-scroller>
             </article>
         </section>
     </main>
@@ -75,25 +77,31 @@ import PageFooter from '../components/PageFooter.vue';
 <style lang="scss" scoped>
 
     .pageMain{
+        margin-top: 25px;
+        margin-bottom: 25px;
         display: grid;
         min-height: 100vh;
         align-items: center;
-        margin-top: 25px;
-        margin-bottom: 25px;
+        grid-template-rows: 1fr 0.5fr;
         >.docsBody{
             display: grid;
             align-items: center;
-            grid-auto-flow: row;
-            row-gap: 50px;
             >.DocsInfo{
+                padding-top: 20px;
+                padding-bottom: 20px;
                 display: grid;
                 justify-items: center;
 
             }
+        }
+        >.docsNavigation{
+            display: grid;
+            align-items: center;
             >.docsNav{
                 display: grid;
                 justify-items: center;
             }
+        
         }
     }
     .pageHeader{
