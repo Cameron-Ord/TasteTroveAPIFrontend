@@ -4,10 +4,14 @@
     </header>
         <main class="pageMain">
             <section class="keyGen">
-                <profile-page-info></profile-page-info>
+                <article>
+                    <profile-page-info></profile-page-info>
+                </article>
             </section>
             <section class="ProfileInfo">
-                <profile-page-generate></profile-page-generate>
+                <article>
+                    <profile-page-generate></profile-page-generate>
+                </article>
             </section>
         </main>
     <footer class="pageFooter">
@@ -50,7 +54,7 @@ import Cookies from 'vue-cookies';
         created(){
             if(this.CookieExists('clientSession')){
                 const checker = Cookies.get('clientSession');
-                 const clientBool = this.checkIfNull(checker);
+                const clientBool = this.checkIfNull(checker);
                  if(clientBool === false){
                     this.clientSession = true;
                  } else {

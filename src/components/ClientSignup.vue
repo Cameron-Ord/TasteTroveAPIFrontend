@@ -42,11 +42,11 @@ import Cookies from 'vue-cookies';
                     url:'https://tastetroveapi.cameron-ord.online/api/clientLogin',
                     method: 'POST',
                     data:{
-                        username: username,
-                        password: password,
+                        username: username.value,
+                        password: password.value,
                     }
                 }).then((response)=>{
-                    Cookies.set('clientInfo', response['data'])
+                    Cookies.set('clientSession', response['data'])
                     this.$router.push('/ProfilePage');
                 }).catch((error)=>{
                     error;

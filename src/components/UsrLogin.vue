@@ -30,6 +30,7 @@ import axios from 'axios';
 
         methods:{
           submitLogin(username, password){
+            console.log(username.value,password.value)
             if(username && password){
               axios({
                 url: 'https://tastetroveapi.cameron-ord.online/api/clientLogin',
@@ -41,7 +42,6 @@ import axios from 'axios';
               }).then((response)=>{
                 Cookies.set('clientSession', response['data']);
                 this.$router.push('ProfilePage');
-                response;
               }).catch((error)=>{
                 error;
                 this.status = "Invalid Login"
