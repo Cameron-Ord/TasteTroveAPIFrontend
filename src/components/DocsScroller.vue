@@ -6,7 +6,6 @@
             <p @click="goToSelection(this.$refs.cuisine)" ref="cuisine" class="scrollerText">GET by Cuisine</p>
             <p @click="goToSelection(this.$refs.name)" ref="name" class="scrollerText">GET by Name</p>
             <p @click="goToSelection(this.$refs.id)" ref="id" class="scrollerText">GET recipe ID</p>
-            <p @click="goToSelection(this.$refs.nutrition)" ref="nutrition" class="scrollerText">GET by Nutrition</p>
             <p @click="goToSelection(this.$refs.healthy)" ref="healthy" class="scrollerText">GET by isHealthy</p>
             <p @click="goToSelection(this.$refs.instructions)" ref="instructions" class="scrollerText">GET Instructions</p>
             <p @click="goToSelection(this.$refs.nutrition)" ref="nutrition" class="scrollerText">GET Nutrition</p>
@@ -15,6 +14,7 @@
 </template>
 
 <script>
+import Cookies from 'vue-cookies';
     export default {
         components:{
 
@@ -28,7 +28,9 @@
 
         methods:{
             goToSelection(ref){
-                console.log(ref)
+                Cookies.remove('docsGoto');
+                Cookies.set('docsGoto', ref.textContent.replace(/ /g, "_"));
+                this.$emit('showChoice');
             }
         },
         computed:{

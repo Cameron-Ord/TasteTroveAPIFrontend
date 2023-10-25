@@ -5,24 +5,24 @@
     <main class="pageMain">
         <section class="docsBody">
             <article class="docsNav">
-                <docs-scroller></docs-scroller>
+                <docs-scroller @showChoice="handleChoice"></docs-scroller>
             </article>
-            <article class="DocsInfo">
+            <article class="DocsInfo" v-if="gotoChoice === 'API_keys'">
                 <docs-apikey></docs-apikey>
             </article>
-            <article class="DocsInfo">
+            <article class="DocsInfo" v-if="gotoChoice === 'GET_by_Cuisine'">
                 <docs-getcuisine></docs-getcuisine>
             </article>
-            <article class="DocsInfo">
+            <article class="DocsInfo" v-if="gotoChoice === 'GET_by_Name'">
                 <docs-name></docs-name>
             </article>
-            <article class="DocsInfo">
+            <article class="DocsInfo" v-if="gotoChoice === 'GET_recipe_ID'">
                 <docs-id></docs-id>
             </article>
-            <article class="DocsInfo">
+            <article class="DocsInfo" v-if="gotoChoice === 'GET_Nutrition'">
                 <docs-nutrition></docs-nutrition>
             </article>
-            <article class="DocsInfo">
+            <article class="DocsInfo" v-if="gotoChoice === 'GET_Instructions'">
                 <get-instructions></get-instructions>
             </article>
         </section>
@@ -33,6 +33,7 @@
 </template>
 
 <script>
+import Cookies from 'vue-cookies';
 import GetInstructions from '../components/GetInstructions.vue';
 import DocsNutrition from '../components/DocsNutrition.vue';
 import DocsId from '../components/DocsId.vue';
@@ -44,6 +45,18 @@ import PageHeader from '../components/PageHeader.vue';
 import PageFooter from '../components/PageFooter.vue';
 
     export default {
+
+        data() {
+            return {
+                gotoChoice : undefined
+            }
+        },
+
+        methods:{
+            handleChoice(){
+                this.gotoChoice = Cookies.get('docsGoto');
+            }
+        },
 
         components:{
             GetInstructions,
