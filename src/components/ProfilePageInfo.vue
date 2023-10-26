@@ -1,6 +1,6 @@
 
 <template>
-    <span v-if="profileInfo !== undefined">
+    <span class="profInfo" v-if="profileInfo !== undefined">
         <div class="welcomeDiv">
             <h1>Welcome, {{ profileInfo[0]['username'] }}</h1>
         </div>
@@ -73,7 +73,27 @@ import Cookies from 'vue-cookies';
 </script>
 
 <style lang="scss" scoped>
+.profInfo{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    >.profileInfo{
+        display: grid;
+        justify-items: center;
+        text-align: center;
+        >h4{
 
+        }
+    }
+    >.welcomeDiv{
+        display: grid;
+        justify-items: center;
+        text-align: center;
+        >h1{
+
+        }
+    }
+}
 </style>
 
 

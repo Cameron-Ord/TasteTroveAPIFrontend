@@ -72,6 +72,9 @@ import Cookies from 'vue-cookies';
         grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
         grid-auto-flow: row;
         row-gap: 15px;
+        >p{
+            cursor: pointer;
+        }
     }
 }
 </style>

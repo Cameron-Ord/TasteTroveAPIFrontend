@@ -72,6 +72,16 @@ import Cookies from 'vue-cookies';
     align-items: center;
     margin-top: 25px;
     margin-bottom: 25px;
+    grid-template-rows: 1fr 1fr;
+
+    >.keyGen{
+        display: grid;
+        align-items:center;
+    }
+    >.ProfileInfo{
+        display: grid;
+        align-items:center;
+    }
 }
     .pageHeader{
     display: grid;
