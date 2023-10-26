@@ -1,17 +1,17 @@
 
 <template>
     <span class="generateSpan">
+        <div class="genDesc">
+            <h4 class="genDescText">You can generate or replace a key by clicking generate key</h4>
+        </div>
         <div class="generateButton">
-            <p @click="generateKey">
+            <p @click="generateKey" class="genKey">
                 Generate Key
             </p>
         </div>
-        <div class="genDesc">
-            <h4>You can generate or replace a key by clicking generate key</h4>
-        </div>
         <div class="generatedDisplay" v-if="key !== undefined">
-            <h3>Your key:</h3>
-            <p>{{ key }}</p>
+            <h3 class="yourKey">Your key:</h3>
+            <p class="keyTag">{{ key.toString() }}</p>
         </div>
     </span>
 </template>
@@ -80,6 +80,8 @@ import Cookies from 'vue-cookies';
     display: grid;
     justify-items: center;
     align-items: center;
+    grid-auto-flow: row;
+    row-gap: 25px;
     >.generatedDisplay{
         display: grid;
         justify-items: center;
@@ -96,7 +98,7 @@ import Cookies from 'vue-cookies';
         justify-items: center;
         text-align: center;
         >h4{
-
+        
         }
     }
     >.generateButton{

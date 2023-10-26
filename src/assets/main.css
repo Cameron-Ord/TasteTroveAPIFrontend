@@ -14,8 +14,6 @@ body{
   background-color: var(--bg);
 }
 
-
-
 .apiKeyHeader{
 color: var(--bg);
 background-color: var(--highlight);
@@ -25,7 +23,6 @@ padding-bottom: 4px;
 padding-top: 4px;
 border-radius: 7.5px;
 line-break: normal;
-
 }
 
 .apiKeySubHeader{
@@ -176,4 +173,77 @@ line-break: normal;
   border-radius: 4px;
   background-color: var(--mid);
   color: var(--bg);
+}
+
+.genKey{
+ color: var(--bg);
+ background-color: var(--highlight);
+ padding-left: 7.5px;
+ padding-right: 7.5px;
+ padding-bottom: 5px;
+ padding-top: 5px;
+ border-radius: 5px;
+ cursor: pointer;
+}
+
+.genDescText{
+  color: var(--bg);
+  background-color: var(--dark);
+  width: 70%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 7.5px;
+  padding-left: 7.5px;
+  border-radius: 5px;
+}
+
+.yourKey{
+  color: var(--highlight);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 7.5px;
+  padding-left: 7.5px;
+  border-radius: 5px;
+
+}
+
+.keyTag{
+  color: var(--bg);
+  background-color: var(--highlight);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 7.5px;
+  padding-left: 7.5px;
+  border-radius: 5px;
+  line-break: normal;
+  word-break: break-all;
+}
+.profileUsername{
+  color: var(--bg);
+  background-color: var(--dark);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 7.5px;
+  padding-left: 7.5px;
+  border-radius: 5px;
+}
+.profileEmail{
+  color: var(--bg);
+  background-color: var(--highlight);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 7.5px;
+  padding-left: 7.5px;
+  border-radius: 5px;
+
+}
+.profileMember{
+  color: var(--bg);
+  background-color: var(--highlight);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 7.5px;
+  padding-left: 7.5px;
+  border-radius: 5px;
+  
 }

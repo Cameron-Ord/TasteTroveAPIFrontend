@@ -2,11 +2,11 @@
 <template>
     <span class="profInfo" v-if="profileInfo !== undefined">
         <div class="welcomeDiv">
-            <h1>Welcome, {{ profileInfo[0]['username'] }}</h1>
+            <h1 class="profileUsername">Welcome, {{ profileInfo[0]['username'] }}</h1>
         </div>
         <div class="profileInfo">
-            <h4> Email : {{ profileInfo[0]['email'] }}</h4>
-            <h4> Member since : {{profileInfo[0]['created_at']}} </h4>
+            <h4 class="profileEmail"> Email : {{ profileInfo[0]['email'] }}</h4>
+            <h4 class="profileMember"> Member since : {{profileInfo[0]['created_at']}} </h4>
         </div>
     </span>
 </template>
@@ -77,10 +77,15 @@ import Cookies from 'vue-cookies';
     display: grid;
     justify-items: center;
     align-items: center;
+    grid-auto-flow: row;
+    row-gap: 25px;
     >.profileInfo{
         display: grid;
         justify-items: center;
         text-align: center;
+        grid-auto-flow: row;
+        row-gap: 15px;
+        
         >h4{
 
         }

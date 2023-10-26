@@ -91,6 +91,7 @@ import PageFooter from '../components/PageFooter.vue';
             display: grid;
             align-items: center;
             >.DocsInfo{
+                transition: 0.3s ease-in-out;
                 padding-top: 20px;
                 padding-bottom: 20px;
                 display: grid;

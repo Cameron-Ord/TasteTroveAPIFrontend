@@ -11,21 +11,27 @@
 </template>
 
 <script>
-import axios from 'axios'
+import Cookies from 'vue-cookies';
+import axios from 'axios';
 export default {
   components: {},
 
   data() {
-    return {}
+    return {
+      keyHolder : undefined
+    }
   },
 
   methods: {
-    sendQuery() {
+
+    fetchResults(){
       const Query = this.$refs.cuisineInput.value
-      console.log(Query)
       axios({
         url: `https://tastetroveapi.cameron-ord.online/api/searchByCuisine?cuisine=${Query}`,
-        method: 'GET'
+        method: 'GET',
+        headers:{
+          apiKey: this.keyHolder
+        }
       })
         .then((resp) => {
           console.log(resp)
@@ -33,7 +39,27 @@ export default {
         })
         .catch((err) => {
           err
-        })
+        });
+    },
+
+    sendQuery() {
+      const clientID=Cookies.get('clientSession')
+      console.log(clientID)
+      axios({
+        url: `https://tastetroveapi.cameron-ord.online/api/fetchUserKey`,
+        method: 'GET',
+        params:{
+          client_id:clientID[0]['client_id'],
+          session_token:clientID[0]['session_token'] 
+        }
+      }).then((response)=>{
+         this.keyHolder = response['data'][0]['apiKey'];
+         if(this.keyHolder !== undefined){
+          this.fetchResults()
+         }
+      }).catch((error)=>{
+        error;
+      })
     }
   },
   computed: {},
