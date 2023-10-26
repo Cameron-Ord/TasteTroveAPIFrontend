@@ -25,6 +25,7 @@ export default {
   },
 
   methods: {
+
     goToHome(){
       if(this.$route.path === '/'){
         this.$router.go();

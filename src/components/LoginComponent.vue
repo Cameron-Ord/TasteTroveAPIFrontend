@@ -5,7 +5,7 @@
       <login-image></login-image>
     </span>
     <span class="signupbox" ref="signup" SignupBox>
-      <client-signup @closeBox="SignupBox(this.$refs.signup)"></client-signup>
+      <client-signup @closeBox="SignupBox(this.$refs.signup)" ref="clientSign"></client-signup>
     </span>
   </article>
 </template>

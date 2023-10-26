@@ -14,14 +14,14 @@
                         <p class="menuTag" @click="goToDocs(this.$refs.Docs)" ref="Docs">Documentation</p>
                     </div>
                 </div>
-                <div class="contentWrapper">
+                <div class="contentWrapper" v-if="(clientSession === true) || (clientSession === false && currentPath !== '/Login')">
                     <div class="menuSubHeader">
                         <h4>Account</h4>
                     </div>
                     <div class="menuText">
                         <p class="menuTag" @click="goToProfile" v-if="clientSession === true">Profile</p>
-                        <p class="menuTag" @click="goToLogin" v-if="clientSession === false">Login</p>
-                        <p class="menuTag" @click="goToSignup" v-if="clientSession === false">Signup</p>
+                        <p class="menuTag" @click="goToLogin" v-if="clientSession === false && currentPath !== '/Login'">Login</p>
+                        <p class="menuTag" @click="goToSignup" v-if="clientSession === false && currentPath !== '/Login'">Signup</p>
                         <p class="menuTag" @click="SignOut" v-if="clientSession === true">Signout</p>
                     </div>
                 </div>
@@ -34,12 +34,9 @@
 <script>
 import Cookies from 'vue-cookies';
     export default {
-        components:{
-
-        },
-
         data() {
             return {
+                currentPath : undefined,
                 clientSession : false
             }
         },
@@ -126,13 +123,13 @@ import Cookies from 'vue-cookies';
 
         },
         created(){
+            this.currentPath = this.$route.path;
+            console.log(this.currentPath)
             if(this.CookieExists('clientSession')){
                 const checker = Cookies.get('clientSession');
                  const clientBool = this.checkIfNull(checker);
                  if(clientBool === false){
                     this.clientSession = true;
-                 } else {
-                    this.$router.push('/');
                  }
             }
         },

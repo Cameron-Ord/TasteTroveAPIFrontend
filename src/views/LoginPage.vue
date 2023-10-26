@@ -4,7 +4,7 @@
     </header>
     <main class="pageMain">
         <section class="sectionLogin">
-            <login-component></login-component>
+            <login-component ref="login"></login-component>
         </section>
     </main>
     <footer class="pageFooter">
