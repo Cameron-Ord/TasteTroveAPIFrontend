@@ -85,7 +85,6 @@ import Cookies from 'vue-cookies';
             goToDocs(ref){
                 if(ref){
                     this.$refs.menuBox.classList.remove('isActive');
-                    Cookies.set('docChoice', ref.textContent)
                     this.$router.push('/Docs');
                 }
             },

@@ -2,8 +2,8 @@
     <header class="pageHeader">
         <page-header></page-header>
     </header>
-    <main class="pageMain">
-        <section class="docsBody">
+    <main class="pageMain" ref="pageMain">
+        <section class="docsBody" v-if="gotoChoice !== undefined">
             <article class="DocsInfo" v-if="gotoChoice === 'API_keys'">
                 <docs-apikey></docs-apikey>
             </article>
@@ -55,8 +55,12 @@ import PageFooter from '../components/PageFooter.vue';
         },
 
         methods:{
+            modifyLayout(mainRef){
+                mainRef.style.gridTemplateRows='1fr 0.5fr';
+            },
             handleChoice(){
                 this.gotoChoice = Cookies.get('docsGoto');
+                this.modifyLayout(this.$refs.pageMain);
             }
         },
 
@@ -82,7 +86,7 @@ import PageFooter from '../components/PageFooter.vue';
         display: grid;
         min-height: 100vh;
         align-items: center;
-        grid-template-rows: 1fr 0.5fr;
+        grid-template-rows: 1fr;
         >.docsBody{
             display: grid;
             align-items: center;
