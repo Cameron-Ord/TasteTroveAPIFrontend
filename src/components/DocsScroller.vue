@@ -63,6 +63,7 @@ import Cookies from 'vue-cookies';
 <style lang="scss" scoped>
 .DocsSpan{
     display: grid;
+    justify-items: center;
     align-items: center;
     width: 100%;
     >.textContainer{
@@ -71,10 +72,25 @@ import Cookies from 'vue-cookies';
         grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
         grid-auto-flow: row;
         row-gap: 15px;
+        width: 90%;
         >p{
             cursor: pointer;
         }
     }
+}
+
+@media only screen and (min-width: 770){
+.DocsSpan{
+    >.textContainer{
+        width: 90%;
+        >p{
+            cursor: pointer;
+        }
+    }
+}
+
+}
+@media only screen and (min-width: 1024px){
 }
 </style>
 

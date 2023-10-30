@@ -92,6 +92,7 @@ export default {
 >.signupbox{
   justify-items: center;
   width: 90%;
+  max-width: 450px;
   z-index: 900;
   position: fixed;
   top: 50%;
@@ -105,5 +106,21 @@ export default {
   padding-bottom: 25px;
   border-radius: 5px;
 }
+}
+@media only screen and (min-width: 770px){
+.loginArticle{
+>.clientLogin.boxIsOpen{
+}
+>.clientLogin{
+}
+>.signupbox.openBox{
+
+}
+>.signupbox{
+  width: 60%;
+  max-width: 500px;
+}
+}
+
 }
 </style>

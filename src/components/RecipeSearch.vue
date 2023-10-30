@@ -84,6 +84,7 @@ export default {
     align-items: center;
     justify-items: center;
     width: 70%;
+    max-width: 300px;
     >.inputTag{
         display: grid;
         width: 90%;

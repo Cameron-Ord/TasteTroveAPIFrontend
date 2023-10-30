@@ -131,6 +131,7 @@ import Cookies from 'vue-cookies';
     }
 
     >.passInput{
+        max-width: 300px;
         display: grid;
         justify-items: center;
         background-color: var(--light);
@@ -145,6 +146,7 @@ import Cookies from 'vue-cookies';
         }
     }
     >.userInput{
+        max-width: 300px;
         display: grid;
         justify-items: center;
         background-color: var(--light);
@@ -159,6 +161,7 @@ import Cookies from 'vue-cookies';
         }
     }
     >.emailInput{
+        max-width: 300px;
         display: grid;
         justify-items: center;
         background-color: var(--light);
@@ -176,6 +179,32 @@ import Cookies from 'vue-cookies';
 }
 
 @media only screen and (min-width: 770px){
+    .signupSpan{
+    >.optionsContainer{
+        >.closeTag{
+        }
+        >.signupButtonTag{
+    }
+    }
+
+    >.passInput{
+        max-width: 300px;
+        >input{
+        }
+    }
+    >.userInput{
+        max-width: 300px;
+
+        >input{
+        }
+    }
+    >.emailInput{
+        max-width: 300px;
+
+        >input{
+        }
+    }
+}
 
 }
 @media only screen and (min-width: 1024px){

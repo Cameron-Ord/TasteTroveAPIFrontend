@@ -101,12 +101,12 @@ import axios from 'axios';
       justify-items: center;
       padding: 5px;
       width: 80%;
-      max-width: 225px;
+      max-width: 300px;
       border-radius: 5px;
       background-color: var(--light);
     >input{
       width: 90%;
-      max-width: 200px;
+      
       border-radius: 5px;
       padding: 7.5px;
       border-color: var(--dark);
@@ -115,7 +115,7 @@ import axios from 'axios';
   >.passwordInputContainer{
     display: grid;
     width: 80%;
-    max-width: 225px;
+    max-width: 300px;
     justify-items: center;
     background-color: var(--light);
     border-radius: 5px;
@@ -126,7 +126,7 @@ import axios from 'axios';
       border-color: var(--dark);
       border-radius: 5px;
       padding: 7.5px;
-      max-width: 200px;
+      
     }
   }
   >.optionsContainer{
@@ -159,18 +159,18 @@ import axios from 'axios';
   row-gap: 75px;
 
 >.usernameInputContainer{
-  max-width: 275px;
+  max-width: 300px;
   
   >input{
-    max-width: 250px;
+  
 
   }
 }
 
 >.passwordInputContainer{
-  max-width: 275px;
+  max-width: 300px;
   >input{
-    max-width: 250px;
+  
   }
 }
 }

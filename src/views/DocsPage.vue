@@ -56,7 +56,15 @@ import PageFooter from '../components/PageFooter.vue';
 
         methods:{
             modifyLayout(mainRef){
-                mainRef.style.gridTemplateRows='1fr 0.5fr';
+                const winSize = window.screen.width;
+                console.log(winSize)
+                if(winSize < 770){
+                    mainRef.style.gridTemplateRows='1fr 0.5fr';
+                    mainRef.style.gridTemplateColumns='1fr';
+                } else if(winSize >=770){
+                    mainRef.style.gridTemplateRows='1fr';
+                    mainRef.style.gridTemplateColumns='1fr 1fr';
+                }
             },
             handleChoice(){
                 this.gotoChoice = Cookies.get('docsGoto');
