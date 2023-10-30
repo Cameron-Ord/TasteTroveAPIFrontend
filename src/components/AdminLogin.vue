@@ -26,7 +26,7 @@ export default {
     submitLogin(username, password){
       if(username && password){
         axios({
-          url: 'https://tastetroveapi.cameron-ord.online/api/adminLogin',
+          url: `${import.meta.env.VITE_APP_BASE_DOMAIN}/api/adminLogin`,
           method: 'POST',
           data:{
             username: username.value,

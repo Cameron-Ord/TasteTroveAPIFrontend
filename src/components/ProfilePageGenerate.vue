@@ -34,7 +34,7 @@ import Cookies from 'vue-cookies';
             generateKey(){
                 let sessionInfo = Cookies.get('clientSession'); 
                 axios({
-                    url:`https://tastetroveapi.cameron-ord.online/api/generateKey`,
+                    url:`${import.meta.env.VITE_APP_BASE_DOMAIN}/api/generateKey`,
                     method: 'POST',
                     data:{
                         client_id: sessionInfo[0]['client_id'],

@@ -1,6 +1,6 @@
 <template>
         <header class="pageHeader">
-            <page-header @handle-response="sendToPreview"></page-header>
+            <page-header></page-header>
         </header>
         <main class="pageMain">
             <section class="heroSection">
@@ -37,9 +37,6 @@ import PageHeader from '../components/PageHeader.vue';
         },
 
         methods:{
-            sendToPreview(){
-
-            }
         },
 
         data() {

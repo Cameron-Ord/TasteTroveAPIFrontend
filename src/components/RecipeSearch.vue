@@ -25,17 +25,20 @@ export default {
   methods: {
 
     fetchResults(){
-      const Query = this.$refs.cuisineInput.value
+      const Query = this.$refs.cuisineInput.value;
+      const isInput = null;
       axios({
-        url: `https://tastetroveapi.cameron-ord.online/api/searchByCuisine?cuisine=${Query}`,
+        url: `${import.meta.env.VITE_APP_BASE_DOMAIN}/api/searchByCuisine?cuisine=${Query}`,
         method: 'GET',
         headers:{
           apiKey: this.keyHolder
+        },
+        params:{
+          isHealthy : isInput
         }
       })
         .then((resp) => {
           console.log(resp)
-          this.$emit('handle-response', resp['data'])
         })
         .catch((err) => {
           err
@@ -43,10 +46,10 @@ export default {
     },
 
     sendQuery() {
-      const clientID=Cookies.get('clientSession')
+      const clientID = Cookies.get('clientSession')
       console.log(clientID)
       axios({
-        url: `https://tastetroveapi.cameron-ord.online/api/fetchUserKey`,
+        url: `${import.meta.env.VITE_APP_BASE_DOMAIN}/api/fetchUserKey`,
         method: 'GET',
         params:{
           client_id:clientID[0]['client_id'],
@@ -63,7 +66,9 @@ export default {
     }
   },
   computed: {},
-  created() {},
+  created() {
+
+  },
   mounted() {},
   beforeMount() {},
   beforeUpdate() {},

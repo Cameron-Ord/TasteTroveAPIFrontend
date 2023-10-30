@@ -6,13 +6,14 @@
             <h3 class="headerIcon" @click="goToHome">Home</h3>
       </div>
     </nav>
-    <div class="searchBar">
-      <recipe-search @handle-response="passToMain"></recipe-search>
+    <div class="searchBar" v-if="clientSession === true">
+      <recipe-search></recipe-search>
     </div>
   </span>
 </template>
 
 <script>
+import Cookies from 'vue-cookies';
 import MenuElement from './MenuElement.vue';
 import RecipeSearch from './RecipeSearch.vue';
 export default {
@@ -21,11 +22,23 @@ export default {
   },
 
   data() {
-    return {}
+    return {
+      clientSession : false
+    }
   },
 
   methods: {
 
+    checkIfNull(cookie){
+        if(cookie !== null){
+            return false;
+        } else {
+            return true;
+        }
+    },
+    CookieExists(Cookie){
+      return document.cookie.split(';').some((cookie) => cookie.trim().startsWith(Cookie + '='))
+    },
     goToHome(){
       if(this.$route.path === '/'){
         this.$router.go();
@@ -33,12 +46,17 @@ export default {
         this.$router.push('/');
       }
     },
-    passToMain(response) {
-      this.$emit('handle-response', response)
-    }
   },
   computed: {},
-  created() {},
+  created() {
+    if(this.CookieExists('clientSession')){
+      const checker = Cookies.get('clientSession');
+      const clientBool = this.checkIfNull(checker);
+        if(clientBool === false){
+          this.clientSession = true;
+        }
+    }
+  },
   mounted() {},
   beforeMount() {},
   beforeUpdate() {},
@@ -52,7 +70,8 @@ export default {
 .headerSpan{
     display: grid;
     align-items: center;
-    grid-template-rows: 75px 50px;
+    grid-auto-flow: row;
+    row-gap: 15px;
 
     >.searchBar{
         display: grid;

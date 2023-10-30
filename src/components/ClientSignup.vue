@@ -39,7 +39,7 @@ import Cookies from 'vue-cookies';
 
             logUsr(username,password){
                 axios({
-                    url:'https://tastetroveapi.cameron-ord.online/api/clientLogin',
+                    url:`${import.meta.env.VITE_APP_BASE_DOMAIN}/api/clientLogin`,
                     method: 'POST',
                     data:{
                         username: username.value,
@@ -55,7 +55,7 @@ import Cookies from 'vue-cookies';
 
             signUsr(email,username,password){
                 axios({
-                    url: 'https://tastetroveapi.cameron-ord.online/api/clientSignup',
+                    url: `${import.meta.env.VITE_APP_BASE_DOMAIN}/api/clientSignup`,
                     method:'POST',
                     data:{
                         username: username.value,

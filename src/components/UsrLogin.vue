@@ -33,7 +33,7 @@ import axios from 'axios';
             console.log(username.value,password.value)
             if(username && password){
               axios({
-                url: 'https://tastetroveapi.cameron-ord.online/api/clientLogin',
+                url: `${import.meta.env.VITE_APP_BASE_DOMAIN}/api/clientLogin`,
                 method: 'POST',
                 data:{
                   username: username.value,

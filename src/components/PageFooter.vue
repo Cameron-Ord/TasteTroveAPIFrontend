@@ -1,8 +1,5 @@
 <template>
   <span class="footerSpan">
-    <nav class="footerNav">
-      <p class="footerText">placeholder</p>
-    </nav>
     <div class="credsFooter">
       <h4 class="footerText">2023 - Cameron Ord</h4>
       <h4 class="footerText">TasteTroveAPI</h4>
@@ -34,7 +31,6 @@ export default {
 .footerSpan{
   display: grid;
   align-items: center;
-  grid-template-rows: 1fr 1fr;
 
   >.credsFooter{
     display: grid;

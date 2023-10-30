@@ -132,10 +132,9 @@ line-break: normal;
   padding-bottom: 3.3px;
   padding-left: 7.5px;
   padding-right: 7.5px;
-  background-color: var(--mid);
+  background-color: var(--dark);
   color: var(--bg);
-  border-radius: 5px;
-  
+  border-radius: 5px;  
 }
 
 .headerIcon{
