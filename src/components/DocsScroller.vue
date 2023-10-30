@@ -2,17 +2,11 @@
   <span class="DocsSpan">
     <div class="textContainer">
       <p @click="goToSelection(this.$refs.keys)" ref="keys" class="scrollerText">API keys</p>
-      <p @click="goToSelection(this.$refs.cuisine)" ref="cuisine" class="scrollerText">
-        GET by Cuisine
-      </p>
+      <p @click="goToSelection(this.$refs.cuisine)" ref="cuisine" class="scrollerText">GET by Cuisine</p>
       <p @click="goToSelection(this.$refs.name)" ref="name" class="scrollerText">GET by Name</p>
       <p @click="goToSelection(this.$refs.id)" ref="id" class="scrollerText">GET recipe ID</p>
-      <p @click="goToSelection(this.$refs.instructions)" ref="instructions" class="scrollerText">
-        GET Instructions
-      </p>
-      <p @click="goToSelection(this.$refs.nutrition)" ref="nutrition" class="scrollerText">
-        GET Nutrition
-      </p>
+      <p @click="goToSelection(this.$refs.instructions)" ref="instructions" class="scrollerText">GET Instructions</p>
+      <p @click="goToSelection(this.$refs.nutrition)" ref="nutrition" class="scrollerText">GET Nutrition</p>
     </div>
   </span>
 </template>
