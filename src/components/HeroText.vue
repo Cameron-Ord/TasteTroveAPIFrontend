@@ -4,13 +4,14 @@
       <h1 class="heroText">Never wonder what to eat.</h1>
     </div>
     <div class="heroPara">
-      <p class="heroParaText">TasteTrove is an API that delivers a wide range of recipes spanning many cuisines.
-      Every recipe is hand picked and added to the API. Each recipe in the TasteTrove API contains 
-      a list of ingredients, it's cooking methods, whether it's healthy or not, all along with the recipes name and description.
+      <p class="heroParaText">
+        TasteTrove is an API that delivers a wide range of recipes spanning many cuisines. Every
+        recipe is hand picked and added to the API. Each recipe in the TasteTrove API contains a
+        list of ingredients, it's cooking methods, whether it's healthy or not, all along with the
+        recipes name and description.
       </p>
     </div>
-  
-</span>
+  </span>
 </template>
 
 <script>
@@ -34,19 +35,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.heroSubheaderSpan{
+.heroSubheaderSpan {
   display: grid;
   justify-items: center;
   grid-auto-flow: row;
   align-items: center;
   row-gap: 25px;
-  >.heroPara{
+  > .heroPara {
     display: grid;
-    justify-items:center;
+    justify-items: center;
 
     text-align: start;
     width: 90%;
-    >.heroParaText{
+    > .heroParaText {
       width: 90%;
       padding-right: 15px;
       padding-left: 15px;
@@ -56,32 +57,30 @@ export default {
       font-weight: 600;
       padding-bottom: 10px;
       padding-top: 10px;
-      letter-spacing: 1px; 
+      letter-spacing: 1px;
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
   }
-  >.subheader{
+  > .subheader {
     display: grid;
     justify-items: center;
-    >.heroText{
-    
+    > .heroText {
     }
   }
-  }
-@media only screen and (min-width: 770px){
-  .heroSubheaderSpan{
-  >.heroPara{
-    justify-items:center;
+}
+@media only screen and (min-width: 770px) {
+  .heroSubheaderSpan {
+    > .heroPara {
+      justify-items: center;
 
-    >.heroParaText{
-      width: 70%;
+      > .heroParaText {
+        width: 70%;
+      }
     }
-  }
-  >.subheader{
-    >.heroText{
-    
+    > .subheader {
+      > .heroText {
+      }
     }
-  }
   }
 }
 </style>

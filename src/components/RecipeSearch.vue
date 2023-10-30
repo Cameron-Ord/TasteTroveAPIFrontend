@@ -1,6 +1,6 @@
 <template>
   <span class="inputSpan">
-    <input 
+    <input
       placeholder="Italian, Pasta, etc.."
       type="text"
       class="inputTag"
@@ -11,30 +11,29 @@
 </template>
 
 <script>
-import Cookies from 'vue-cookies';
-import axios from 'axios';
+import Cookies from 'vue-cookies'
+import axios from 'axios'
 export default {
   components: {},
 
   data() {
     return {
-      keyHolder : undefined
+      keyHolder: undefined
     }
   },
 
   methods: {
-
-    fetchResults(){
-      const Query = this.$refs.cuisineInput.value;
-      const isInput = null;
+    fetchResults() {
+      const Query = this.$refs.cuisineInput.value
+      const isInput = null
       axios({
         url: `${import.meta.env.VITE_APP_BASE_DOMAIN}/api/searchByCuisine?cuisine=${Query}`,
         method: 'GET',
-        headers:{
+        headers: {
           apiKey: this.keyHolder
         },
-        params:{
-          isHealthy : isInput
+        params: {
+          isHealthy: isInput
         }
       })
         .then((resp) => {
@@ -42,7 +41,7 @@ export default {
         })
         .catch((err) => {
           err
-        });
+        })
     },
 
     sendQuery() {
@@ -51,24 +50,24 @@ export default {
       axios({
         url: `${import.meta.env.VITE_APP_BASE_DOMAIN}/api/fetchUserKey`,
         method: 'GET',
-        params:{
-          client_id:clientID[0]['client_id'],
-          session_token:clientID[0]['session_token'] 
+        params: {
+          client_id: clientID[0]['client_id'],
+          session_token: clientID[0]['session_token']
         }
-      }).then((response)=>{
-         this.keyHolder = response['data'][0]['apiKey'];
-         if(this.keyHolder !== undefined){
-          this.fetchResults()
-         }
-      }).catch((error)=>{
-        error;
       })
+        .then((response) => {
+          this.keyHolder = response['data'][0]['apiKey']
+          if (this.keyHolder !== undefined) {
+            this.fetchResults()
+          }
+        })
+        .catch((error) => {
+          error
+        })
     }
   },
   computed: {},
-  created() {
-
-  },
+  created() {},
   mounted() {},
   beforeMount() {},
   beforeUpdate() {},
@@ -79,15 +78,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.inputSpan{
+.inputSpan {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  width: 70%;
+  max-width: 300px;
+  > .inputTag {
     display: grid;
-    align-items: center;
-    justify-items: center;
-    width: 70%;
-    max-width: 300px;
-    >.inputTag{
-        display: grid;
-        width: 90%;
-    }
+    width: 90%;
+  }
 }
 </style>

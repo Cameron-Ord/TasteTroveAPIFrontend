@@ -1,97 +1,86 @@
-
 <template>
-    <span class="DocsSpan">
-        <div class="textContainer">
-            <p @click="goToSelection(this.$refs.keys)" ref="keys" class="scrollerText">API keys</p>
-            <p @click="goToSelection(this.$refs.cuisine)" ref="cuisine" class="scrollerText">GET by Cuisine</p>
-            <p @click="goToSelection(this.$refs.name)" ref="name" class="scrollerText">GET by Name</p>
-            <p @click="goToSelection(this.$refs.id)" ref="id" class="scrollerText">GET recipe ID</p>
-            <p @click="goToSelection(this.$refs.instructions)" ref="instructions" class="scrollerText">GET Instructions</p>
-            <p @click="goToSelection(this.$refs.nutrition)" ref="nutrition" class="scrollerText">GET Nutrition</p>
-        </div>
-    </span>
+  <span class="DocsSpan">
+    <div class="textContainer">
+      <p @click="goToSelection(this.$refs.keys)" ref="keys" class="scrollerText">API keys</p>
+      <p @click="goToSelection(this.$refs.cuisine)" ref="cuisine" class="scrollerText">
+        GET by Cuisine
+      </p>
+      <p @click="goToSelection(this.$refs.name)" ref="name" class="scrollerText">GET by Name</p>
+      <p @click="goToSelection(this.$refs.id)" ref="id" class="scrollerText">GET recipe ID</p>
+      <p @click="goToSelection(this.$refs.instructions)" ref="instructions" class="scrollerText">
+        GET Instructions
+      </p>
+      <p @click="goToSelection(this.$refs.nutrition)" ref="nutrition" class="scrollerText">
+        GET Nutrition
+      </p>
+    </div>
+  </span>
 </template>
 
 <script>
-import Cookies from 'vue-cookies';
-    export default {
-        components:{
+import Cookies from 'vue-cookies'
+export default {
+  components: {},
 
-        },
+  data() {
+    return {}
+  },
 
-        data() {
-            return {
-                
-            }
-        },
-
-        methods:{
-            goToSelection(ref){
-                Cookies.remove('docsGoto');
-                Cookies.set('docsGoto', ref.textContent.replace(/ /g, "_"));
-                this.$emit('showChoice');
-            }
-        },
-        computed:{
-
-        },
-        created(){
-
-        },
-        mounted(){
-
-        },
-        beforeMount(){
-
-        },
-        beforeUpdate(){
-
-        },
-        updated(){
-
-        },
-        beforeUnmount(){
-
-        },
-        unmounted(){
-
-        }
-
+  methods: {
+    goToSelection(ref) {
+      Cookies.remove('docsGoto')
+      Cookies.set('docsGoto', ref.textContent.replace(/ /g, '_'))
+      this.$emit('showChoice')
     }
+  },
+  computed: {},
+  created() {},
+  mounted() {},
+  beforeMount() {},
+  beforeUpdate() {},
+  updated() {},
+  beforeUnmount() {},
+  unmounted() {}
+}
 </script>
 
 <style lang="scss" scoped>
-.DocsSpan{
+.DocsSpan {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  > .textContainer {
     display: grid;
     justify-items: center;
-    align-items: center;
-    width: 100%;
-    >.textContainer{
-        display: grid;
-        justify-items: center;
-        grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
-        grid-auto-flow: row;
-        row-gap: 15px;
-        width: 90%;
-        >p{
-            cursor: pointer;
-        }
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-auto-flow: row;
+    row-gap: 15px;
+    width: 90%;
+    > p {
+      cursor: pointer;
     }
+  }
 }
 
-@media only screen and (min-width: 770){
-.DocsSpan{
-    >.textContainer{
-        width: 90%;
-        >p{
-            cursor: pointer;
-        }
+@media only screen and (min-width: 770) {
+  .DocsSpan {
+    > .textContainer {
+      width: 90%;
+      > p {
+        cursor: pointer;
+      }
     }
+  }
 }
-
-}
-@media only screen and (min-width: 1024px){
+@media only screen and (min-width: 1024px) {
+  .DocsSpan {
+    > .textContainer {
+      width: 60%;
+      > p {
+        cursor: pointer;
+      }
+    }
+  }
 }
 </style>
-
-

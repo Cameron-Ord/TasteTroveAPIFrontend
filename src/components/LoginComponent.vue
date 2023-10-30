@@ -11,14 +11,16 @@
 </template>
 
 <script>
-import LoginImage from './LoginImage.vue';
-import UsrLogin from './UsrLogin.vue';
-import ClientSignup from './ClientSignup.vue';
-import Cookies from 'vue-cookies';
+import LoginImage from './LoginImage.vue'
+import UsrLogin from './UsrLogin.vue'
+import ClientSignup from './ClientSignup.vue'
+import Cookies from 'vue-cookies'
 
 export default {
   components: {
-    ClientSignup,UsrLogin,LoginImage
+    ClientSignup,
+    UsrLogin,
+    LoginImage
   },
 
   data() {
@@ -26,35 +28,34 @@ export default {
   },
 
   methods: {
-    handleLogin(username,password){
-      this.submitLogin(username,password)
+    handleLogin(username, password) {
+      this.submitLogin(username, password)
     },
-    SignupBox(ref){
-      const isopenBox = ref.matches('[SignupBox]');
-      let OpenedBox;
-      if(isopenBox){
-        OpenedBox = ref;
-        OpenedBox.classList.toggle('openBox');
+    SignupBox(ref) {
+      const isopenBox = ref.matches('[SignupBox]')
+      let OpenedBox
+      if (isopenBox) {
+        OpenedBox = ref
+        OpenedBox.classList.toggle('openBox')
         this.$refs.login.classList.toggle('boxIsOpen')
       }
-      const box = document.querySelector('[SignupBox].openBox');
-      if(box === OpenedBox) return
+      const box = document.querySelector('[SignupBox].openBox')
+      if (box === OpenedBox) return
       OpenedBox.classList.remove('openBox')
       this.$refs.login.classList.remove('boxIsOpen')
     },
 
-    CookieExists(Cookie){
+    CookieExists(Cookie) {
       return document.cookie.split(';').some((cookie) => cookie.trim().startsWith(Cookie + '='))
-    },
-},
-  computed: {},
-  created() {
+    }
   },
+  computed: {},
+  created() {},
   mounted() {
-    if(this.CookieExists('SigningUp')){
-      this.SignupBox(this.$refs.signup);
-      Cookies.remove('SigningUp');
-      }
+    if (this.CookieExists('SigningUp')) {
+      this.SignupBox(this.$refs.signup)
+      Cookies.remove('SigningUp')
+    }
   },
   beforeMount() {},
   beforeUpdate() {},
@@ -65,62 +66,59 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-.loginArticle{
+.loginArticle {
   display: grid;
   align-items: center;
   justify-items: center;
->.clientLogin.boxIsOpen{
-  opacity: 0;
-  pointer-events: none;
+  > .clientLogin.boxIsOpen {
+    opacity: 0;
+    pointer-events: none;
+  }
+  > .clientLogin {
+    justify-items: center;
+    z-index: 900;
+    width: 100%;
+    display: grid;
+    grid-auto-flow: row;
+    row-gap: 25px;
+    pointer-events: auto;
+    transition: 0.3s ease-in-out;
+    opacity: 1;
+  }
+  > .signupbox.openBox {
+    pointer-events: auto;
+    opacity: 1;
+  }
+  > .signupbox {
+    justify-items: center;
+    width: 90%;
+    max-width: 450px;
+    z-index: 900;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s ease-in-out;
+    background-color: var(--foreground);
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-radius: 5px;
+  }
 }
->.clientLogin{
-  justify-items: center;
-  z-index: 900;
-  width: 100%;
-  display: grid;
-  grid-auto-flow: row;
-  row-gap: 25px;
-  pointer-events: auto;
-  transition: 0.3s ease-in-out;
-  opacity: 1;
-}
->.signupbox.openBox{
-  pointer-events: auto;
-  opacity: 1;
-}
->.signupbox{
-  justify-items: center;
-  width: 90%;
-  max-width: 450px;
-  z-index: 900;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  pointer-events: none;
-  transition: 0.3s ease-in-out;
-  background-color: var(--foreground);
-  padding-top: 25px;
-  padding-bottom: 25px;
-  border-radius: 5px;
-}
-}
-@media only screen and (min-width: 770px){
-.loginArticle{
->.clientLogin.boxIsOpen{
-}
->.clientLogin{
-}
->.signupbox.openBox{
-
-}
->.signupbox{
-  width: 60%;
-  max-width: 500px;
-}
-}
-
+@media only screen and (min-width: 770px) {
+  .loginArticle {
+    > .clientLogin.boxIsOpen {
+    }
+    > .clientLogin {
+    }
+    > .signupbox.openBox {
+    }
+    > .signupbox {
+      width: 60%;
+      max-width: 500px;
+    }
+  }
 }
 </style>

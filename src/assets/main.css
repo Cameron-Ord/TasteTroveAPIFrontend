@@ -1,52 +1,51 @@
 @import './base.css';
 
-
-:root{
-  --bg:#e3f2fd;
-  --foreground:#90caf9;
-  --highlight:#0d47a1;
-  --dark:#1976d2;
-  --light:#64b5f6;
-  --mid:#2196f3;
+:root {
+  --bg: #e3f2fd;
+  --foreground: #90caf9;
+  --highlight: #0d47a1;
+  --dark: #1976d2;
+  --light: #64b5f6;
+  --mid: #2196f3;
 }
 
-body{
+body {
   background-color: var(--bg);
 }
 
-.apiKeyHeader{
-color: var(--bg);
-background-color: var(--highlight);
-padding-left: 8px;
-padding-right: 8px;
-padding-bottom: 4px;
-padding-top: 4px;
-border-radius: 7.5px;
-line-break: normal;
+.apiKeyHeader {
+  color: var(--bg);
+  background-color: var(--highlight);
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 4px;
+  padding-top: 4px;
+  border-radius: 7.5px;
+  line-break: normal;
 }
 
-.apiKeySubHeader{
-color: var(--bg);
-background-color: var(--dark);
-padding-left: 8px;
-padding-right: 8px;
-padding-bottom: 4px;
-padding-top: 4px;
-border-radius: 7.5px;
-line-break: normal;
+.apiKeySubHeader {
+  color: var(--bg);
+  background-color: var(--dark);
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 4px;
+  padding-top: 4px;
+  border-radius: 7.5px;
+  line-break: normal;
 }
-.apiKeyText{
-color: var(--bg);
-background-color: var(--highlight);
-padding-left: 8px;
-padding-right: 8px;
-padding-top: 6px;
-padding-bottom: 6px;
-border-radius: 5px;
-font-weight: 700;
-line-break: normal;
+.apiKeyText {
+  color: var(--bg);
+  background-color: var(--highlight);
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border-radius: 5px;
+  font-weight: 700;
+  line-break: normal;
 }
-.scrollerText{
+.scrollerText {
   color: var(--bg);
   background-color: var(--dark);
   padding-left: 8px;
@@ -55,7 +54,7 @@ line-break: normal;
   padding-top: 4px;
   border-radius: 7.5px;
 }
-.docInfo{
+.docInfo {
   display: grid;
   align-items: center;
   width: 90%;
@@ -63,13 +62,13 @@ line-break: normal;
   row-gap: 30px;
 }
 
-.docInfo>.headingContainer{
+.docInfo > .headingContainer {
   width: auto;
   max-width: 100%;
   display: grid;
   justify-items: start;
 }
-.docInfo>.headingContainer>h2{
+.docInfo > .headingContainer > h2 {
   color: var(--bg);
   background-color: var(--dark);
   padding-left: 8px;
@@ -77,10 +76,10 @@ line-break: normal;
   padding-bottom: 4px;
   padding-top: 4px;
   border-radius: 7.5px;
-  line-break: normal;  
+  line-break: normal;
 }
 
-.docInfo>.methodContainer{
+.docInfo > .methodContainer {
   display: grid;
   grid-auto-flow: row;
   row-gap: 20px;
@@ -88,7 +87,7 @@ line-break: normal;
   max-width: 100%;
   justify-items: start;
 }
-.docInfo>.methodContainer>h4{
+.docInfo > .methodContainer > h4 {
   color: var(--bg);
   background-color: var(--dark);
   padding-left: 8px;
@@ -100,7 +99,7 @@ line-break: normal;
 
   line-break: normal;
 }
-.docInfo>.methodContainer>p{
+.docInfo > .methodContainer > p {
   white-space-collapse: break-spaces;
   color: var(--bg);
   background-color: var(--highlight);
@@ -113,51 +112,66 @@ line-break: normal;
   line-break: normal;
 }
 
-@media only screen and (min-width: 770px){
-  .docInfo{
+@media only screen and (min-width: 770px) {
+  .docInfo {
     width: 90%;
-  }  
-  .docInfo>.headingContainer{
   }
-  .docInfo>.headingContainer>h2{
+  .docInfo > .headingContainer {
   }
-  
-  .docInfo>.methodContainer{
+  .docInfo > .headingContainer > h2 {
   }
-  .docInfo>.methodContainer>h4{
+
+  .docInfo > .methodContainer {
   }
-  .docInfo>.methodContainer>p{
+  .docInfo > .methodContainer > h4 {
   }
-  
+  .docInfo > .methodContainer > p {
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .docInfo {
+    width: 60%;
+  }
+  .docInfo > .headingContainer {
+  }
+  .docInfo > .headingContainer > h2 {
+  }
+
+  .docInfo > .methodContainer {
+  }
+  .docInfo > .methodContainer > h4 {
+  }
+  .docInfo > .methodContainer > p {
+  }
 }
 
-.blockSpan{
+.blockSpan {
   border-radius: 7.5px;
   padding-top: 25px;
   padding-bottom: 25px;
   background-color: var(--foreground);
 }
-.pageHeader{
+.pageHeader {
   display: grid;
   align-items: center;
   min-height: 150px;
-  background-color: var(--foreground); 
+  background-color: var(--foreground);
 }
-.pageFooter{
+.pageFooter {
   display: grid;
   align-items: center;
   min-height: 175px;
   background-color: var(--foreground);
 }
 
-@media only screen and (min-width: 1024px){
-  .pageHeader{
+@media only screen and (min-width: 1024px) {
+  .pageHeader {
     display: grid;
     align-items: center;
     min-height: 150px;
-    background-color: var(--foreground); 
+    background-color: var(--foreground);
   }
-  .pageFooter{
+  .pageFooter {
     display: grid;
     align-items: center;
     min-height: 175px;
@@ -165,22 +179,22 @@ line-break: normal;
   }
 }
 
-.footerText{
+.footerText {
   padding-top: 3.3px;
   padding-bottom: 3.3px;
   padding-left: 7.5px;
   padding-right: 7.5px;
   background-color: var(--dark);
   color: var(--bg);
-  border-radius: 5px;  
+  border-radius: 5px;
 }
 
-.headerIcon{
+.headerIcon {
   background-color: var(--dark);
   color: var(--bg);
   border-radius: 4px;
 }
-.heroText{
+.heroText {
   padding-top: 3.3px;
   padding-bottom: 3.3px;
   padding-left: 7.5px;
@@ -189,51 +203,51 @@ line-break: normal;
   color: var(--bg);
   border-radius: 5px;
 }
-.inputSpan{
+.inputSpan {
   border-radius: 5px;
   padding: 5px;
   background-color: var(--light);
 }
-.inputTag{
+.inputTag {
   padding: 7.5px;
   background-color: var(--bg);
   color: var(--highlight);
   border-radius: 5px;
   border-color: var(--dark);
 }
-.heroImage{
+.heroImage {
   padding-top: 10px;
   padding-bottom: 10px;
   background-color: var(--foreground);
 }
-@media only screen and (min-width: 1024px){
-  .heroImage{
+@media only screen and (min-width: 1024px) {
+  .heroImage {
     border-radius: 100px;
     padding-right: 10px;
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
     background-color: var(--foreground);
-  }  
+  }
 }
-.headerSubtext{
+.headerSubtext {
   border-radius: 4px;
   background-color: var(--mid);
   color: var(--bg);
 }
 
-.genKey{
- color: var(--bg);
- background-color: var(--highlight);
- padding-left: 7.5px;
- padding-right: 7.5px;
- padding-bottom: 5px;
- padding-top: 5px;
- border-radius: 5px;
- cursor: pointer;
+.genKey {
+  color: var(--bg);
+  background-color: var(--highlight);
+  padding-left: 7.5px;
+  padding-right: 7.5px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.genDescText{
+.genDescText {
   color: var(--bg);
   background-color: var(--dark);
   width: 70%;
@@ -244,17 +258,16 @@ line-break: normal;
   border-radius: 5px;
 }
 
-.yourKey{
+.yourKey {
   color: var(--highlight);
   padding-top: 5px;
   padding-bottom: 5px;
   padding-right: 7.5px;
   padding-left: 7.5px;
   border-radius: 5px;
-
 }
 
-.keyTag{
+.keyTag {
   color: var(--bg);
   background-color: var(--highlight);
   padding-top: 5px;
@@ -265,7 +278,7 @@ line-break: normal;
   line-break: normal;
   word-break: break-all;
 }
-.profileUsername{
+.profileUsername {
   color: var(--bg);
   background-color: var(--dark);
   padding-top: 5px;
@@ -274,7 +287,7 @@ line-break: normal;
   padding-left: 7.5px;
   border-radius: 5px;
 }
-.profileEmail{
+.profileEmail {
   color: var(--bg);
   background-color: var(--highlight);
   padding-top: 5px;
@@ -282,9 +295,8 @@ line-break: normal;
   padding-right: 7.5px;
   padding-left: 7.5px;
   border-radius: 5px;
-
 }
-.profileMember{
+.profileMember {
   color: var(--bg);
   background-color: var(--highlight);
   padding-top: 5px;
@@ -292,5 +304,4 @@ line-break: normal;
   padding-right: 7.5px;
   padding-left: 7.5px;
   border-radius: 5px;
-  
 }

@@ -4,7 +4,7 @@
       <h4>{{ recipeHolder[0][index]['title'] }}</h4>
       <img :src="recipeHolder[0][index]['image_url']" alt="" />
       <h4>{{ recipeHolder[0][index]['desc'] }}</h4>
-      </div>
+    </div>
     <preview-controls @send-index="handleIndex"></preview-controls>
   </span>
 </template>
@@ -63,16 +63,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.recipeSpan{
+.recipeSpan {
   display: grid;
   align-items: center;
-  >.recipeContainer{
+  > .recipeContainer {
     display: grid;
     justify-items: center;
-    >img{
+    > img {
       width: 100%;
     }
-    
   }
 }
 </style>

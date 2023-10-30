@@ -24,7 +24,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-p,h1,h2,h3,h4,img,a{
+p,
+h1,
+h2,
+h3,
+h4,
+img,
+a {
   padding: 0px;
   margin: 0px;
 }

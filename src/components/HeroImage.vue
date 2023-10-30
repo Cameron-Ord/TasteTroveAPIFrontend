@@ -1,6 +1,6 @@
 <template>
   <span class="heroImageSpan">
-    <img class="heroImage" src="/images/lily-banse--YHSwy6uqvk-unsplash.jpg" alt="recipe image">
+    <img class="heroImage" src="/images/lily-banse--YHSwy6uqvk-unsplash.jpg" alt="recipe image" />
   </span>
 </template>
 
@@ -9,10 +9,7 @@ export default {
   components: {},
 
   data() {
-    return {
-
-
-    }
+    return {}
   },
 
   methods: {},
@@ -28,28 +25,26 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.heroImageSpan{
+.heroImageSpan {
   display: grid;
   justify-items: center;
 
-  >.heroImage{
+  > .heroImage {
     width: 100%;
     height: 400px;
     object-fit: cover;
   }
 }
-@media only screen and (min-width: 1024px){
-  .heroImageSpan{
-  display: grid;
-  justify-items: center;
-  
-  >.heroImage{
-    width: 90%;
-    height: 550px;
-    object-fit: cover;
+@media only screen and (min-width: 1024px) {
+  .heroImageSpan {
+    display: grid;
+    justify-items: center;
+
+    > .heroImage {
+      width: 90%;
+      height: 550px;
+      object-fit: cover;
+    }
   }
 }
-
-}
-
 </style>

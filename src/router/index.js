@@ -26,7 +26,7 @@ const router = createRouter({
       path: '/ProfilePage',
       name: 'Profile Page',
       component: ProfilePage
-    }, 
+    }
   ]
 })
 
