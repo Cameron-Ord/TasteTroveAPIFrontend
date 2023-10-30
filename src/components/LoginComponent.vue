@@ -75,8 +75,9 @@ export default {
   pointer-events: none;
 }
 >.clientLogin{
+  justify-items: center;
   z-index: 900;
-  width: 90%;
+  width: 100%;
   display: grid;
   grid-auto-flow: row;
   row-gap: 25px;
@@ -89,6 +90,7 @@ export default {
   opacity: 1;
 }
 >.signupbox{
+  justify-items: center;
   width: 90%;
   z-index: 900;
   position: fixed;

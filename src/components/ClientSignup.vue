@@ -105,7 +105,6 @@ import Cookies from 'vue-cookies';
     justify-items: center;
     grid-auto-flow: row;
     row-gap: 20px;
-
     >.optionsContainer{
         display: grid;
         justify-items: center;
@@ -173,7 +172,16 @@ import Cookies from 'vue-cookies';
             width: 90%;
         }
     }
+
 }
+
+@media only screen and (min-width: 770px){
+
+}
+@media only screen and (min-width: 1024px){
+    
+}
+
 </style>
 
 

@@ -53,11 +53,21 @@
 display: grid;
 align-items: center;
 justify-items: center;
+width: 100%;
 >.imgTag{
     border-radius: 6.5px;
     width: 90%;
+    max-width: 400px;
 }
 }
+
+@media only screen and (min-width: 770px){
+
+}
+@media only screen and (min-width: 1024px){
+
+}
+
 </style>
 
 

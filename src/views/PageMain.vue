@@ -89,5 +89,20 @@ import PageHeader from '../components/PageHeader.vue';
         align-items: center;
         min-height: 175px;
     }
+    @media only screen and (min-width: 770px){
+        .pageMain{
+     
+        >.featuresSection{
+            >.featuresArticle{
+                row-gap: 25px;
+                grid-template-columns: repeat(auto-fit, minmax(350px,1fr));
+            }
+        }
 
+        >.heroSection{
+            >.heroArticle{
+            }
+        }
+    }
+    }
 </style>

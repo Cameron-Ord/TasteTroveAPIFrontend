@@ -62,6 +62,7 @@
     display: grid;
     grid-auto-flow: row;
     row-gap: 25px;
+    width: 90%;
     >.text{
         display: grid;
         justify-items: center;

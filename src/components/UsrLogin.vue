@@ -85,7 +85,8 @@ import axios from 'axios';
 
 <style lang="scss" scoped>
 .wrapper{
-
+    width: 90%;
+    max-width: 400px;
     background-color: var(--foreground);
     padding-top: 25px;
     padding-bottom: 25px;
@@ -94,16 +95,18 @@ import axios from 'axios';
     align-items: center;
     justify-items: center;
     grid-auto-flow: row;
-    row-gap: 20px;
+    row-gap: 50px;
     >.usernameInputContainer{
       display: grid;
       justify-items: center;
       padding: 5px;
-      width: 75%;
+      width: 80%;
+      max-width: 225px;
       border-radius: 5px;
       background-color: var(--light);
     >input{
       width: 90%;
+      max-width: 200px;
       border-radius: 5px;
       padding: 7.5px;
       border-color: var(--dark);
@@ -111,7 +114,8 @@ import axios from 'axios';
   }
   >.passwordInputContainer{
     display: grid;
-    width: 75%;
+    width: 80%;
+    max-width: 225px;
     justify-items: center;
     background-color: var(--light);
     border-radius: 5px;
@@ -122,6 +126,7 @@ import axios from 'axios';
       border-color: var(--dark);
       border-radius: 5px;
       padding: 7.5px;
+      max-width: 200px;
     }
   }
   >.optionsContainer{
@@ -148,6 +153,35 @@ import axios from 'axios';
     }
   }
 }
+
+@media only screen and (min-width: 770px){
+.wrapper{
+  row-gap: 75px;
+
+>.usernameInputContainer{
+  max-width: 275px;
+  
+  >input{
+    max-width: 250px;
+
+  }
+}
+
+>.passwordInputContainer{
+  max-width: 275px;
+  >input{
+    max-width: 250px;
+  }
+}
+}
+}
+@media only screen and (min-width: 1024px){
+.wrapper{
+  row-gap: 75px;
+
+}  
+}
+
 </style>
 
 

@@ -62,6 +62,7 @@
     display: grid;
     grid-auto-flow: row;
     row-gap: 25px;
+    width: 90%;
     >.text{
         display: grid;
         justify-items: center;
@@ -99,6 +100,38 @@
             text-align: center;
         }
     }
+}
+@media only screen and (min-width: 770px){
+    .blockSpan{
+    >.text{
+        >p{
+        }
+    }
+    >.image{
+        >img{
+        }
+    }
+    >.header{
+        >h3{
+        }
+    }
+}    
+}
+@media only screen and (min-width: 1024px){
+    .blockSpan{
+    >.text{
+        >p{
+        }
+    }
+    >.image{
+        >img{
+        }
+    }
+    >.header{
+        >h3{
+        }
+    }
+}
 }
 </style>
 
