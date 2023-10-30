@@ -38,4 +38,18 @@ export default {
     object-fit: cover;
   }
 }
+@media only screen and (min-width: 1024px){
+  .heroImageSpan{
+  display: grid;
+  justify-items: center;
+  
+  >.heroImage{
+    width: 90%;
+    height: 550px;
+    object-fit: cover;
+  }
+}
+
+}
+
 </style>

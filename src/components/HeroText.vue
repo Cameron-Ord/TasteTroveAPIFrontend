@@ -42,10 +42,12 @@ export default {
   row-gap: 25px;
   >.heroPara{
     display: grid;
-    justify-items: start;
+    justify-items:center;
+
     text-align: start;
-    width: 80%;
+    width: 90%;
     >.heroParaText{
+      width: 90%;
       padding-right: 15px;
       padding-left: 15px;
       background-color: var(--bg);
@@ -66,4 +68,20 @@ export default {
     }
   }
   }
+@media only screen and (min-width: 770px){
+  .heroSubheaderSpan{
+  >.heroPara{
+    justify-items:center;
+
+    >.heroParaText{
+      width: 70%;
+    }
+  }
+  >.subheader{
+    >.heroText{
+    
+    }
+  }
+  }
+}
 </style>

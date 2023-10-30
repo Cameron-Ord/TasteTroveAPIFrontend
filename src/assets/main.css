@@ -138,11 +138,31 @@ line-break: normal;
   background-color: var(--foreground);
 }
 .pageHeader{
+  display: grid;
+  align-items: center;
+  min-height: 150px;
+  background-color: var(--foreground); 
+}
+.pageFooter{
+  display: grid;
+  align-items: center;
+  min-height: 175px;
   background-color: var(--foreground);
 }
 
-.pageFooter{
-  background-color: var(--foreground);
+@media only screen and (min-width: 1024px){
+  .pageHeader{
+    display: grid;
+    align-items: center;
+    min-height: 150px;
+    background-color: var(--foreground); 
+  }
+  .pageFooter{
+    display: grid;
+    align-items: center;
+    min-height: 175px;
+    background-color: var(--foreground);
+  }
 }
 
 .footerText{
@@ -185,6 +205,16 @@ line-break: normal;
   padding-top: 10px;
   padding-bottom: 10px;
   background-color: var(--foreground);
+}
+@media only screen and (min-width: 1024px){
+  .heroImage{
+    border-radius: 100px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: var(--foreground);
+  }  
 }
 .headerSubtext{
   border-radius: 4px;

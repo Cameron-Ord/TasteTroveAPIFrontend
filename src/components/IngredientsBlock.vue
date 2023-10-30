@@ -101,6 +101,39 @@
         }
     }
 }
+@media only screen and (min-width: 770px){
+    .blockSpan{
+    >.text{
+        >p{
+        }
+    }
+    >.image{
+        >img{
+        }
+    }
+    >.header{
+        >h3{
+        }
+    }
+}    
+}
+@media only screen and (min-width: 1024px){
+    .blockSpan{
+        width: 70%;
+        >.text{
+        >p{
+        }
+    }
+    >.image{
+        >img{
+        }
+    }
+    >.header{
+        >h3{
+        }
+    }
+}
+}
 </style>
 
 

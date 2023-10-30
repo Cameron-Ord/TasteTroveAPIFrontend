@@ -6,6 +6,14 @@
             <h3 class="headerIcon" @click="goToHome">Home</h3>
       </div>
     </nav>
+    <nav class="desktopNav">
+      <div class="siteNav">
+          <menu-desktop></menu-desktop>
+      </div>  
+      <div class="logoContainer">
+            <h3 class="headerIcon" @click="goToHome">Home</h3>
+      </div>
+    </nav>
     <div class="searchBar" v-if="clientSession === true">
       <recipe-search></recipe-search>
     </div>
@@ -13,12 +21,13 @@
 </template>
 
 <script>
+import MenuDesktop from './MenuDesktop.vue';
 import Cookies from 'vue-cookies';
 import MenuElement from './MenuElement.vue';
 import RecipeSearch from './RecipeSearch.vue';
 export default {
   components: {
-    RecipeSearch,MenuElement
+    RecipeSearch,MenuElement,MenuDesktop
   },
 
   data() {
@@ -73,6 +82,9 @@ export default {
     grid-auto-flow: row;
     row-gap: 15px;
 
+    >.desktopNav{
+      display: none;
+    }
     >.searchBar{
         display: grid;
         justify-items: center;
@@ -80,19 +92,8 @@ export default {
     >.headerNav{
         align-items: center;
         display: grid;
+        justify-items: center;
         grid-template-columns: 1fr 1fr;
-        >div{
-            display: grid;
-            justify-items: center;
-            grid-template-columns: 1fr;
-            >.headerSubtext{
-                padding-left: 5px;
-                padding-right: 5px;
-                padding-top: 2.5px;
-                padding-bottom: 2.5px;
-
-            }
-        }
         >.logoContainer{
             display: grid;
             justify-items: center;
@@ -106,5 +107,40 @@ export default {
               }
         }
     }
+}
+@media only screen and (min-width: 770px){
+}
+@media only screen and (min-width: 1024px){
+  .headerSpan{
+    row-gap: 75px;
+
+    >.desktopNav{
+      display: grid;
+      align-items: center;
+      grid-template-columns: 1fr 1fr;
+
+      >.siteNav{
+
+      }
+
+      >.logoContainer{
+        display: grid;
+        justify-items: center;
+        >.headerIcon{
+            padding-left: 5px;
+            padding-right: 5px;
+            padding-top: 2.5px;
+            padding-bottom: 2.5px;
+            cursor: pointer;
+          }
+      }
+    }
+    >.searchBar{
+    }
+    >.headerNav{
+      display: none;
+    }
+}
+
 }
 </style>

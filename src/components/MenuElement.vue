@@ -1,7 +1,6 @@
 
 <template>
-    <div>
-       <div class="dropDown">
+    <div class="dropDown">
         <h2 @click="showMenu(this.$refs.menuBox)" dropDownButton ref="icon" class="icon">Nav</h2>
         <div class="menuBox" ref="menuBox" dropdown>
             <div class="menuContent">
@@ -10,7 +9,6 @@
                         <h4>Docs</h4>
                     </div>
                     <div class="menuText">
-                        <p class="menuTag" @click="goToDocs(this.$refs.Policy)" ref="Policy">Usage Policy</p>
                         <p class="menuTag" @click="goToDocs(this.$refs.Docs)" ref="Docs">Documentation</p>
                     </div>
                 </div>
@@ -27,7 +25,6 @@
                 </div>
             </div>
         </div>
-       </div>
     </div>
 </template>
 

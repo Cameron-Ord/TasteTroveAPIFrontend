@@ -79,16 +79,6 @@ import PageHeader from '../components/PageHeader.vue';
             }
         }
     }
-    .pageHeader{
-    display: grid;
-    align-items: center;
-    min-height: 150px;
-    }
-    .pageFooter{
-        display: grid;
-        align-items: center;
-        min-height: 175px;
-    }
     @media only screen and (min-width: 770px){
         .pageMain{
      
@@ -101,8 +91,31 @@ import PageHeader from '../components/PageHeader.vue';
 
         >.heroSection{
             >.heroArticle{
+        
             }
         }
     }
+    }
+    @media only screen and (min-width: 1024px){
+    .pageMain{
+     
+     >.featuresSection{
+        padding-top: 50px;
+        padding-bottom: 50px;
+         >.featuresArticle{
+            grid-template-columns: repeat(auto-fit, minmax(550px,1fr));
+            row-gap: 50px;
+
+        }
+     }
+
+     >.heroSection{
+        height: 850px;
+         >.heroArticle{
+            grid-template-columns: 1fr 1fr;
+        }
+     }
+    }
+    
     }
 </style>

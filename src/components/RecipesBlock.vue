@@ -119,7 +119,8 @@
 }
 @media only screen and (min-width: 1024px){
     .blockSpan{
-    >.text{
+        width: 70%;
+        >.text{
         >p{
         }
     }
